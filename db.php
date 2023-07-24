@@ -1,9 +1,7 @@
 <?php
 	$servername = "localhost";
-	$dbusername = "pklist";
-$dbpassword = "Chitra@3693";
-	$dbname = "localcart";
+	$dbusername = "root";
+	$dbpassword = "";
+	$dbname = "fooddelivery";
 	$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
-	
-	
 ?>

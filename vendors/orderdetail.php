@@ -21,7 +21,7 @@
 													$o_id = $row2["id"];
 													$p_id = $row2["p_id"];
 													$u_id = $row2["u_id"];
-													$v_id = $row2["u_id"];
+													$v_id = $row2["v_id"];
 													$quantity = $row2["quantity"];
 													$delivery = $row2["delivery"];
 													$status = $row2["status"];

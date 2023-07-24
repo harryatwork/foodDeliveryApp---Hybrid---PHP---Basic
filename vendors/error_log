@@ -1,0 +1,88 @@
+[17-Jun-2019 12:15:19 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 46
+[17-Jun-2019 12:15:19 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 87
+[17-Jun-2019 12:16:03 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 46
+[17-Jun-2019 12:16:03 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 87
+[17-Jun-2019 12:16:05 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 46
+[17-Jun-2019 12:16:05 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 87
+[17-Jun-2019 12:16:21 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 46
+[17-Jun-2019 12:16:21 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 87
+[17-Jun-2019 12:17:27 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 46
+[17-Jun-2019 12:17:27 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 87
+[17-Jun-2019 12:17:29 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 46
+[17-Jun-2019 12:17:29 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 87
+[17-Jun-2019 12:19:36 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 45
+[17-Jun-2019 12:19:36 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 86
+[17-Jun-2019 12:19:58 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 45
+[17-Jun-2019 12:19:58 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 86
+[17-Jun-2019 12:20:00 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 45
+[17-Jun-2019 12:20:00 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 86
+[17-Jun-2019 12:20:22 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 45
+[17-Jun-2019 12:20:22 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 86
+[17-Jun-2019 12:20:51 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 45
+[17-Jun-2019 12:20:51 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 86
+[17-Jun-2019 12:20:59 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 45
+[17-Jun-2019 12:20:59 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 86
+[17-Jun-2019 12:22:07 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 86
+[17-Jun-2019 12:36:23 UTC] PHP Notice:  Undefined index: cat in /home/hk3693/public_html/appgrep/localcart/vendors/productadd.php on line 54
+[17-Jun-2019 12:36:23 UTC] PHP Notice:  Undefined index: cat in /home/hk3693/public_html/appgrep/localcart/vendors/productadd.php on line 54
+[17-Jun-2019 12:36:23 UTC] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/hk3693/public_html/appgrep/localcart/vendors/productadd.php on line 70
+[17-Jun-2019 12:42:53 UTC] PHP Notice:  Undefined index: status in /home/hk3693/public_html/appgrep/localcart/vendors/productdetail.php on line 18
+[17-Jun-2019 12:43:19 UTC] PHP Notice:  Undefined index: status in /home/hk3693/public_html/appgrep/localcart/vendors/productdetail.php on line 18
+[17-Jun-2019 12:43:46 UTC] PHP Notice:  Undefined index: status in /home/hk3693/public_html/appgrep/localcart/vendors/productdetail.php on line 18
+[17-Jun-2019 12:46:58 UTC] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/hk3693/public_html/appgrep/localcart/vendors/orderssub.php on line 36
+[17-Jun-2019 12:54:26 UTC] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/hk3693/public_html/appgrep/localcart/vendors/pincodes.php on line 58
+[17-Jun-2019 12:54:33 UTC] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/hk3693/public_html/appgrep/localcart/vendors/pincodes.php on line 58
+[17-Jun-2019 14:59:17 UTC] PHP Notice:  Undefined index: status in /home/hk3693/public_html/appgrep/localcart/vendors/productdetail.php on line 18
+[17-Jun-2019 14:59:28 UTC] PHP Notice:  Undefined index: status in /home/hk3693/public_html/appgrep/localcart/vendors/productdetail.php on line 18
+[17-Jun-2019 15:03:25 UTC] PHP Notice:  Undefined index: status in /home/hk3693/public_html/appgrep/localcart/vendors/productdetail.php on line 18
+[17-Jun-2019 15:03:43 UTC] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/hk3693/public_html/appgrep/localcart/vendors/orderssub.php on line 36
+[17-Jun-2019 15:03:51 UTC] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/hk3693/public_html/appgrep/localcart/vendors/orderssub.php on line 36
+[17-Jun-2019 15:03:56 UTC] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/hk3693/public_html/appgrep/localcart/vendors/orderssub.php on line 36
+[17-Jun-2019 15:04:01 UTC] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/hk3693/public_html/appgrep/localcart/vendors/orderssub.php on line 36
+[09-Jul-2019 16:20:32 UTC] PHP Notice:  Undefined index: email in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 7
+[09-Jul-2019 16:21:51 UTC] PHP Notice:  Undefined index: email in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 7
+[09-Jul-2019 16:22:05 UTC] PHP Notice:  Undefined index: email in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 7
+[09-Jul-2019 16:22:15 UTC] PHP Notice:  Undefined index: quantity in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 130
+[09-Jul-2019 16:22:15 UTC] PHP Notice:  Undefined index: delivery in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 131
+[09-Jul-2019 16:22:20 UTC] PHP Notice:  Undefined index: quantity in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 130
+[09-Jul-2019 16:22:20 UTC] PHP Notice:  Undefined index: delivery in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 131
+[09-Jul-2019 16:22:40 UTC] PHP Notice:  Undefined index: quantity in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 130
+[09-Jul-2019 16:22:40 UTC] PHP Notice:  Undefined index: delivery in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 131
+[11-Jul-2019 13:11:19 UTC] PHP Notice:  Undefined index: email in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 7
+[11-Jul-2019 13:11:30 UTC] PHP Notice:  Undefined index: email in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 7
+[12-Jul-2019 14:09:44 UTC] PHP Notice:  Undefined index: email in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 7
+[12-Jul-2019 14:09:54 UTC] PHP Notice:  Undefined index: email in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 7
+[12-Jul-2019 14:09:55 UTC] PHP Notice:  Undefined index: email in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 7
+[12-Jul-2019 14:10:09 UTC] PHP Notice:  Undefined index: quantity in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 130
+[12-Jul-2019 14:10:09 UTC] PHP Notice:  Undefined index: delivery in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 131
+[12-Jul-2019 14:10:29 UTC] PHP Parse error:  syntax error, unexpected '$price' (T_VARIABLE) in /home/hk3693/public_html/appgrep/localcart/vendors/addproduct.php on line 15
+[12-Jul-2019 14:10:50 UTC] PHP Notice:  Undefined index: quantity in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 130
+[12-Jul-2019 14:10:50 UTC] PHP Notice:  Undefined index: delivery in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 131
+[12-Jul-2019 14:10:51 UTC] PHP Notice:  Undefined index: email in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 7
+[12-Jul-2019 14:10:51 UTC] PHP Notice:  Undefined index: name in /home/hk3693/public_html/appgrep/localcart/vendors/addproduct.php on line 6
+[12-Jul-2019 14:10:51 UTC] PHP Notice:  Undefined index: category in /home/hk3693/public_html/appgrep/localcart/vendors/addproduct.php on line 7
+[12-Jul-2019 14:10:51 UTC] PHP Notice:  Undefined index: pcom in /home/hk3693/public_html/appgrep/localcart/vendors/addproduct.php on line 9
+[12-Jul-2019 14:10:51 UTC] PHP Notice:  Undefined index: price in /home/hk3693/public_html/appgrep/localcart/vendors/addproduct.php on line 11
+[12-Jul-2019 14:10:51 UTC] PHP Notice:  Undefined index: quantity in /home/hk3693/public_html/appgrep/localcart/vendors/addproduct.php on line 17
+[12-Jul-2019 14:10:51 UTC] PHP Notice:  Undefined index: v_id in /home/hk3693/public_html/appgrep/localcart/vendors/addproduct.php on line 20
+[12-Jul-2019 14:10:59 UTC] PHP Notice:  Undefined index: id in /home/hk3693/public_html/appgrep/localcart/vendors/productdetail.php on line 8
+[12-Jul-2019 14:11:33 UTC] PHP Notice:  Undefined index: quantity in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 130
+[12-Jul-2019 14:11:33 UTC] PHP Notice:  Undefined index: delivery in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 131
+[12-Jul-2019 14:12:36 UTC] PHP Notice:  Undefined index: quantity in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 130
+[12-Jul-2019 14:12:36 UTC] PHP Notice:  Undefined index: delivery in /home/hk3693/public_html/appgrep/localcart/vendors/dashboard.php on line 131
+[12-Jul-2019 14:12:38 UTC] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/hk3693/public_html/appgrep/localcart/vendors/orderssub.php on line 36
+[12-Jul-2019 14:13:39 UTC] PHP Notice:  Undefined index: quantity in /home/hk3693/public_html/appgrep/localcart/vendors/orderssub.php on line 43
+[12-Jul-2019 14:13:39 UTC] PHP Notice:  Undefined index: city in /home/hk3693/public_html/appgrep/localcart/vendors/orderssub.php on line 51
+[12-Jul-2019 14:13:40 UTC] PHP Notice:  Undefined index: id in /home/hk3693/public_html/appgrep/localcart/vendors/orderssub.php on line 8
+[12-Jul-2019 14:13:43 UTC] PHP Notice:  Undefined index: quantity in /home/hk3693/public_html/appgrep/localcart/vendors/orderdetail.php on line 25
+[12-Jul-2019 14:13:43 UTC] PHP Notice:  Undefined index: delivery in /home/hk3693/public_html/appgrep/localcart/vendors/orderdetail.php on line 26
+[12-Jul-2019 14:13:43 UTC] PHP Notice:  Undefined index: category in /home/hk3693/public_html/appgrep/localcart/vendors/orderdetail.php on line 36
+[12-Jul-2019 14:13:43 UTC] PHP Notice:  Undefined index: city in /home/hk3693/public_html/appgrep/localcart/vendors/orderdetail.php on line 46
+[12-Jul-2019 14:13:43 UTC] PHP Notice:  Undefined index: address in /home/hk3693/public_html/appgrep/localcart/vendors/orderdetail.php on line 48
+[12-Jul-2019 14:13:46 UTC] PHP Notice:  Undefined index: quantity in /home/hk3693/public_html/appgrep/localcart/vendors/orderssub.php on line 43
+[12-Jul-2019 14:13:46 UTC] PHP Notice:  Undefined index: city in /home/hk3693/public_html/appgrep/localcart/vendors/orderssub.php on line 51
+[12-Jul-2019 14:14:08 UTC] PHP Notice:  Undefined index: quantity in /home/hk3693/public_html/appgrep/localcart/vendors/orderssub.php on line 42
+[12-Jul-2019 14:14:08 UTC] PHP Notice:  Undefined index: city in /home/hk3693/public_html/appgrep/localcart/vendors/orderssub.php on line 50
+[12-Jul-2019 14:15:30 UTC] PHP Notice:  Undefined index: quantity in /home/hk3693/public_html/appgrep/localcart/vendors/orderssub.php on line 43
+[12-Jul-2019 14:16:56 UTC] PHP Notice:  Undefined index: quantity in /home/hk3693/public_html/appgrep/localcart/vendors/orderssub.php on line 52
+[12-Jul-2019 14:17:21 UTC] PHP Notice:  Undefined index: quantity in /home/hk3693/public_html/appgrep/localcart/vendors/orderssub.php on line 51

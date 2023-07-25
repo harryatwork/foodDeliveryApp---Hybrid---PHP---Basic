@@ -1,181 +1,161 @@
-<style>
-  @media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  .mobile {
-    margin-left:-12px;
-    width:350px;
-  }
-}
-@media only screen and (min-width: 768px) {
-    .mobile {
-        margin-left:30%;
-        width:460px;
-    }
-}
-</style>
 
-<?php include('header_index.php'); ?>
-		<br><br><br><br>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Local Cart</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      body {
+        background-image: url();
+        background-repeat: none;
+        background-position: fixed;
+      }
+      .head {
+        background-image: url(images/mainpage/bg1.jpeg);
+        height: 630px;
+        background-size:100%;
+      }
+      .two {
+        background-image: -webkit-linear-gradient(
+          150deg,
+          rgba(0, 0, 0, 0.1) 35%,
+          white 35%
+        );
+        min-height: 300px;
+      }
+      .footer a {
+        text-decoration: none;
+        color: white;
+        background-color: black;
+    
+      }
+      .footer li{
+        list-style: none;
+		font-size:15px;
+		
+      }
+      .carousel-caption h5 {
+        margin-top: -180px !important;
+        margin-left: -450px !important;
+      }
+      .carousel-indicators li {
+        margin-top: -250px !important;
+        text-align: left !important;
+      }
+      .carousel-indicators {
+        margin-left: -580px !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class=""style="width:auto">
+      <div class="head p-3">
+        <ul style="list-style-type:none; text-align:right;">
+          <li>
+            <i class="fas fa-unlock-alt" style="color: white">
+              <a
+                href="vendorsignup.php"
+                style="text-decoration: none;font-family:verdana; font-size:normal; color: whitesmoke; border-right: 2px solid whitesmoke; padding: 10px;"
+                >Become A Vendor
+              </a>
+            </i>
+            <a
+              class="btn btn-outline-primary  btn-sm"
+              style="border-radius:30px; border-color:white; width:100px; color: whitesmoke"
+              href="login.php"
+              ><strong>User Login</strong></a
+            >
+          </li>
+        </ul>
+		
         <div
-          class="box d-flex justify-content-center mobile"
-          style="border: 2px solid black;  height: 300px; background-color:lightblue; border-radius: 20px;"
+          class="box d-flex justify-content-center"
+          style="border: 2px solid black; width:460px; height: 560px; background-color:lightblue; border-radius: 20px;margin-left:400px;"
         >
-          <div class="col-md-8 py-3" style="display: grid;align-items: center;">
-            <form action="stores.php" method="post">
+          <div class="col-md-8 py-3">
             <center>
               <img src="images/mainpage/logo.png" alt="" width="300px;" />
-              <h5>Groceries Delivered In 1 Hour!</h5>
-              <!-- <p style="font-size:13px;">Enter your postal code to see your local stores</p> -->
+              <h5>Sign Up to Become a Vendor</h5>
+              <p style="font-size:13px;">Groceries Delivered In 1 Hour! </p>
             </center>
-
-<!--             
+        <form action="vendorsignupinsert.php" method="post">
+            <input
+              type="text"
+              class="form-control mb-2"
+              style="border-radius: 20px" 
+              placeholder="Enter Business Name" name="business" required
+            />
+			<input
+              type="text"
+              class="form-control mb-2"
+              style="border-radius: 20px"
+              placeholder="Enter Authorized Person Name" name="aperson" required
+            />
+			<input
+              type="email"
+              class="form-control mb-2"
+              style="border-radius: 20px"
+              placeholder="Enter Email ID" name="email" required
+            />
+            <input
+              type="number"
+              class="form-control mb-2"
+              style="border-radius: 20px"
+              placeholder="Enter Mobile Number" name="mobile" required
+            />
+			<input
+              type="password"
+              class="form-control mb-2"
+              style="border-radius: 20px"
+              placeholder="Enter Password" name="password" required
+            />
+            
             <div id="my_map"   style="height:500px;width:500px;display: none" ></div>
-            <input type="search" required style="border-radius: 20px" name="location" class="form-control mb-2" autocomplete="off"  role="combobox" aria-autocomplete="list" aria-owns="react-autowhatever-1" aria-expanded="false" aria-haspopup="false" class="textField locationInputBoxoriginRegionIcon hasClearButton" placeholder="Type in Location" id="pac-input" value="">
+            <input type="search" required style="border-radius: 20px" name="location" class="form-control mb-2" autocomplete="off"  role="combobox" aria-autocomplete="list" aria-owns="react-autowhatever-1" aria-expanded="false" aria-haspopup="false" class="textField locationInputBoxoriginRegionIcon hasClearButton" placeholder="Type in Store Location" id="pac-input" value="">
             
+            
+            <input
+              type="text"
+              class="form-control mb-2"
+              style="border-radius: 20px"
+              placeholder="Enter City" name="city" required
+            />
+            <input type="hidden" name="status" value="Not Active" />
             <button
-              type="submit"
+              type="submit" name="submit"
               class="btn btn-primary btn-block"
-              style="border-radius: 20px; background-color:#0C35DE;"
-              >Find Stores</button
+              style="border-radius: 20px"
+              >Sign Up</button
             >
-            </form>
-            <p class="text-muted text-center mt-2">
-              Already have an account?
-              <a href="login.php">Login</a>
-            </p> -->
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="" style="width:auto; ">
-      <div
-        id="carouselExampleIndicators"
-        class="carousel slide"
-        data-ride="carousel"
-      >
-        <ol class="carousel-indicators " >
-          <li
-            data-target="#carouselExampleIndicators"
-            data-slide-to="0"
-            class="active" style="background-color:black;"
-          ></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="two">
-              <div
-                class="-webkit-linear-gradient"
-                style="float:right;position: relative;z-index: -1;"
-              >
-                  
-            <?php 
-                                $sql1 = "SELECT * FROM banners WHERE id = '1' ";
-								$result1 = $conn->query($sql1);
-								if ($result1->num_rows > 0) {   
-                                while($row1 = $result1->fetch_assoc()) {   
-									$banner1 = $row1["banner"];
-						?>
-                <img src="images/banners/<?php echo $banner1; ?>" alt="" width="550" height="300" />
-            <?php } } else { } ?>
-            
-              </div>
-            </div>
-            <div class="carousel-caption d-none d-md-block" style="color:black;">
-              <h5>Slider1</h5>
-              <p style="text-align: left;">Slider content, Slider content, Slider content, Slider content, <br> Slider content, Slider content, </p>
-            </div>
-          </div>
-          
-          
-          
-          
-          
-        </div>
-        <a
-          class="carousel-control-prev"
-          href="#carouselExampleIndicators"
-          role="button"
-          data-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a
-          class="carousel-control-next"
-          href="#carouselExampleIndicators"
-          role="button"
-          data-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div>
-
-
-      <div class="" style="width: auto">
-      <div class="row no-gutters" style="background-color:whitesmoke">
-        <div class="col-md-6">
-          <img src="images/mainpage/ph.jpg" class="img-fluid" />
-        </div>
-        <div class="col-md-6 py-3">
-          <center>
-            <h2>Download</h2>
-            <h2>Our App</h2>
-            <p>
-              Footer content, Footer content, Footer content, Footer content, Footer content, Footer content, 
-Footer content, Footer content, Footer content, Footer content, Footer content,             </p>
-            <h5>Download our apps for offline coursetaking</h5>
-            <br />
-            <a href="#" style="text-decoration:none;color:black">
-              <i class="fab fa-apple" style="font-size: 50px"></i>
-            </a>
-			&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="#" style="text-decoration:none;color:black">
-              <i class="fab fa-android" style="font-size: 50px"></i>
-            </a>
-          </center>
-        </div>
-      </div>
-      </div>
-
-      <div class="" style="width: auto;" >
-      <div class="footer py-3" style="background-color: black">
-        <div class="row">
-          <div class="col-md-3">
-            <ul>
-              <h5 style="color:white">QUICK LINKS</h5>
-              <!-- <li><a href="vendorsignup.php">Become Vendor</a></li> -->
-              <li><a href="#">Grocery Franchise</a></li>
-              <li><a href="#">Media & Community</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3">
-            <ul>
-              <h5 style="color:white">ABOUT COMPANY</h5>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <!-- <li><a href="admin/index.php">Admin</a></li> -->
-            </ul>
-          </div>
-          <div class="col-md-3">
-            <h5 style="color:white">ABOUT APP</h5>
-            <p style="color:white;font-size:15px;">
-             Footer content, Footer content, Footer content, Footer content, Footer content, Footer content, 
-			 Footer content, Footer content, Footer content, 
+            <p class="text-muted text-center mt-2" >
+              Already Hold an Account..?
+              <a href="vendors/index.php">Sign In</a>
             </p>
-          </div>
-          <div class="col-md-3 py-5">
-            <center>
-            <a href="#"><i class="fab fa-twitter fa-2x mr-1"></i></a>
-            <a href="#"> <i class="fab fa-facebook fa-2x mr-1"></i></a>
-            <a href="#"> <i class="fab fa-instagram fa-2x mr-1"></i></a>
-            <a href="#"> <i class="fab fa-youtube fa-2x mr-1"></i></a>
-          </center>
+        </form>
           </div>
         </div>
       </div>
     </div>
+
   </div>
 
 
@@ -337,6 +317,8 @@ Footer content, Footer content, Footer content, Footer content, Footer content, 
 
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDkKetQwosod2SZ7ZGCpxuJdxY3kxo5Po&amp;libraries=places&amp;callback=initMap" async defer></script>
+     
+
 
 
 

@@ -32,7 +32,7 @@
         background-position: fixed;
       }
       .head {
-        background-image: url(images/mainpage/bg1.jpeg);
+        background-image: url(../images/mainpage/bg1.jpeg);
         height: 700px;
         background-size:100%;
         background-repeat: no-repeat;
@@ -68,9 +68,13 @@
       .carousel-indicators {
         margin-left: -580px !important;
       }
+
+      a {
+        text-decoration: none !important;
+      }
     </style>
   </head>
   <body>
-    <div class=""style="width:auto; height:700px;">
-      <div class="head p-3">
-        
+    <div class=""style="width:auto; height:100%;">
+      
+       

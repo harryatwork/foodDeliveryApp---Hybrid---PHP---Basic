@@ -1,6 +1,5 @@
 <?php include('header.php'); ?>
-			
-			
+						
             <div class="content">
                 <div class="container-fluid">
 						   <?php 
@@ -12,25 +11,7 @@
 									$v_id = $rownesu["id"]; 
 							?>
                     <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card card-stats">
-                                <div class="card-header">
-                                    <div class="icon icon-warning">
-                                       
-                                    </div>
-                                </div>
-                                <div class="card-content">
-                                    <p class="category"><strong>Total Store Impressions</strong></p>
-                                    <h3 class="card-title"><?php echo $rownesu["views"]; ?></h3>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="stats">
-                                        <i class="material-icons text-info">info</i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="card card-stats">
                                 <div class="card-header">
                                     <div class="icon icon-rose">
@@ -53,7 +34,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="card card-stats">
                                 <div class="card-header">
                                     <div class="icon icon-success">
@@ -71,7 +52,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="card card-stats">
                                 <div class="card-header">
                                     <div class="icon icon-info">

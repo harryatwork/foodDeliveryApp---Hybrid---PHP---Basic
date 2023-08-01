@@ -22,9 +22,9 @@ include ('../db.php');
     else
     {
 	       header("location:index.php");   
- echo '<script language="javascript">';
-echo 'alert("The email or password you entered is incorrect..")';
-echo '</script>';
+          echo '<script language="javascript">';
+          echo 'alert("The email or password you entered is incorrect..")';
+          echo '</script>';
   }
 
 ?>

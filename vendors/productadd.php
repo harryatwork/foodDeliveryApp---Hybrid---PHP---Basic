@@ -68,7 +68,7 @@
 														
 															<div class="form-group label-floating">
 																<label class="control-label">
-																	Type Unit Product Price
+																	Type Unit Product Price in Ruppes:
 																	<small>*</small>
 																</label>
 																<input class="form-control" name="price" type="number" required="true" />
@@ -76,13 +76,17 @@
 															
 															<div class="form-group label-floating">
 																<label class="control-label">
-																	Type Unit Product Quantity (Kgs (OR) No.)
+																	Type Unit Product Quantity (Grams (OR) No.)
 																	<small>*</small>
 																</label>
 																<input class="form-control" name="quantity" type="number" required="true"/>
 															</div>
 														
 															<input type="hidden" name="v_id" value="<?php echo $v_id; ?>" />
+															
+															<br/>
+
+															<input type="file" name="fileToUpload" id="fileToUpload" />
 															<hr>
 															<br>
 															<br><br>

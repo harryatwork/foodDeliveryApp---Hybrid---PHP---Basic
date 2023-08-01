@@ -184,7 +184,7 @@
                             <div class="card card-profile">
                                 <div class="card-">
                                     <a href="#pablo">
-                                        <img class="img" src="../images/products/example.png" style="height:500px;" />
+                                        <img class="img" src="../images/products/<?= $row5["image"]; ?>" style="height:500px;object-fit: cover;" />
                                     </a>
                                 </div>
                                 <div class="card-content">

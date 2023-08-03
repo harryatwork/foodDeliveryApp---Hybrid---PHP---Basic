@@ -41,7 +41,7 @@
                     <div class="food-section row" id="filter-menu">
                         
                         
-						<div class="cart col-md-3 col-sm-12 col-xs-12">
+						<div class="cart col-md-3 col-sm-12 col-xs-12" style="padding: 40px 0;">
                             <div class="cart-head">
                                 <h4 class="cart-tit">Cart</h4>
                             </div>
@@ -71,26 +71,26 @@
 								while($row555 = $result555->fetch_assoc()) { 
 									$p_name = $row555["name"];
 							?>
-                            <div class="cardIndi" c-id="<?= $c_id; ?>">
+                            <div class="cardIndi" c-id="<?= $c_id; ?>" style="display: grid;
+                                                                                grid-template-columns: 25% 25% 25% 25%;
+                                                                                align-items: center;">
                                 <div>
                                     <img src="../images/products/<?= $row555["image"]; ?>" 
                                         class="veg-icon"
                                         style="width: 60px;border-radius: 6px;height: 30px;object-fit: cover;"
                                     >
                                 </div>
-                                &nbsp;&nbsp;
                                 <div style="display:inline-block;">
                                     <strong><?php echo $p_name; ?></strong>
                                 </div>
-                                <div style="display:inline-block;float:right;margin-right:150px;">
+                                <div style="display:inline-block;float:right;">
                                     <strong> ₹ <?php echo $price; ?> x <?= $row55["quantity"]; ?></strong>
                                 </div>
-                                <div style="display:inline-block;float:right;margin-top:-25px;">
+                                <div style="display:inline-block;float:right;">
                                     <a class="removeFromCartBtn add-btn" c-id="<?= $c_id; ?>" cardIndi-val="<?= ($price * ($row55["quantity"])); ?>" style="cursor:pointer;">Remove</a>
                                 </div>
-                            
-                            <hr style="border-top: dotted 1px;" />
                             </div>
+                            <hr style="border-top: dotted 1px;" />
                             
                             <?php } } else { } ?>
                             
@@ -152,7 +152,7 @@
                                     </div>
                                 </div>
 
-                                <div style="margin: auto;width: 100%;text-align: center;">
+                                <div style="margin: auto;width: 100%;text-align: center;padding-bottom: 15%;">
                                     <a href="checkout.php" style="background-color: green;
                                                             color: white;
                                                             padding: 10px 100px;

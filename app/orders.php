@@ -313,6 +313,11 @@ a.account-card .card:active {
   display: unset;
 }
 
+.row {
+    margin-left:0px !important;
+    margin-right:0px !important;
+}
+
 </style>
 
 

@@ -83,7 +83,7 @@
 									<div class="food-list-view-section" 
                                         style="display: grid;
                                                 grid-template-columns: 1fr 1fr;
-                                                gap: 4% 10%;"
+                                                gap: 4% 14%;"
                                     >
 										<!-- <div class="food-list-sec-head"></div> -->
 										
@@ -121,10 +121,10 @@
             									$u_id = $row["id"];
             									$userlocation = $row["location"];
             						?>
-            								<div class="col-sm-3">
+            								<div class="col-sm-3" style="padding-bottom: 10px;">
 												<div class="add-btn-wrap text-right" 
                                                      style="display: grid;
-                                                            grid-template-columns: 1fr auto;
+                                                            /* grid-template-columns: 1fr auto; */
                                                             align-items: center;
                                                             gap: 10%;
                                                             margin-bottom: 5%;">

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <style>
   @media only screen and (max-width: 350px) {
   /* For mobile phones: */

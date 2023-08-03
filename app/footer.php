@@ -95,9 +95,9 @@
 
 <div class="bottom-appbar">
     <div class="tabs">
-    <a class="tab is-active tab--left" href="profile.php">
-        <span><i class="fa fa-user" aria-hidden="true"></i></span>
-        <span>Profile</span>
+    <a class="tab is-active tab--left" href="orders.php">
+        <span><i class="fa fa-th-list" aria-hidden="true"></i></span>
+        <span>Orders</span>
     </a>
     <a class="tab tab--fab" href="index.php">
         <div class="top">

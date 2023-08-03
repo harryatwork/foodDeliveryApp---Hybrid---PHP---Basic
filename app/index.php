@@ -31,7 +31,7 @@
           style="border: 2px solid black;  height: fit-content; background-color:lightblue; border-radius: 20px;margin: auto;"
         >
           <div class="col-md-8 py-3">
-            <form action="stores.php" method="post">
+            <form action="products.php" method="post">
             <center>
               <img src="../images/mainpage/logo.png" alt="" width="300px;" />
               <h5>Groceries Delivered In 1 Hour!</h5>

@@ -122,8 +122,36 @@
             									$userlocation = $row["location"];
             						?>
             								<div class="col-sm-3">
-												<div class="add-btn-wrap text-right" >
-                                                    <a class="login-item add-btn addToCartBtn" u-id="<?php echo $u_id; ?>" p-id="<?php echo $p_id; ?>" v-id="<?php echo $v_id; ?>" price="<?php echo $price; ?>" style="border-radius: 6px;" >Add</a>
+												<div class="add-btn-wrap text-right" 
+                                                     style="display: grid;
+                                                            grid-template-columns: 1fr auto;
+                                                            align-items: center;
+                                                            gap: 10%;
+                                                            margin-bottom: 5%;">
+                                                    <div class="productQuantityDiv"
+                                                         style="display: grid;
+                                                                grid-template-columns: auto auto auto;
+                                                                align-items: center;">
+                                                        <i class="fa fa-minus productQuantityMinus" p-id="<?php echo $p_id; ?>" aria-hidden="true"
+                                                            style="text-align: center;
+                                                                    border: 1px solid gray;
+                                                                    padding: 6px 0px;
+                                                                    border-radius: 5px;
+                                                                    cursor:pointer;"
+                                                        ></i>
+                                                        <div class="productQuantity" p-id="<?php echo $p_id; ?>" style="text-align: center;">0</div>
+                                                        <i class="fa fa-plus productQuantityPlus" p-id="<?php echo $p_id; ?>" aria-hidden="true"
+                                                            style="text-align: center;
+                                                                    border: 1px solid gray;
+                                                                    padding: 6px 0px;
+                                                                    border-radius: 5px;
+                                                                    cursor:pointer;"
+                                                        ></i>
+                                                    </div>
+                                                    <a class="login-item add-btn addToCartBtn" 
+                                                        u-id="<?php echo $u_id; ?>" p-id="<?php echo $p_id; ?>" v-id="<?php echo $v_id; ?>" price="<?php echo $price; ?>" 
+                                                        style="border-radius: 6px;margin:0;cursor:pointer;" 
+                                                    >Add</a>
 												</div>
 											</div>
 									<?php } } else { } ?>
@@ -142,99 +170,6 @@
                           
          
                         
-						<div class="cart col-md-3 col-sm-12 col-xs-12">
-                            <div class="cart-head">
-                                <h4 class="cart-tit">Cart</h4>
-                            </div>
-                            
-                            <?php 
-								$sql55 = "SELECT * FROM cart WHERE u_id = '$u_id'";
-								$result55 = $conn->query($sql55);
-								if ($result55->num_rows > 0) {                               
-								while($row55 = $result55->fetch_assoc()) { 
-									$c_id = $row55["id"];
-									$p_id = $row55["p_id"];
-									$v_id = $row55["v_id"];
-									$price = $row55["price"];
-							?>
-							 <?php 
-								$sql555 = "SELECT * FROM products WHERE id = '$p_id'";
-								$result555 = $conn->query($sql555);
-								if ($result555->num_rows > 0) {                               
-								while($row555 = $result555->fetch_assoc()) { 
-									$p_name = $row555["name"];
-							?>
-                            
-                            <div><img src="images/products/example.png" class="veg-icon"></div>
-                            &nbsp;&nbsp;
-                            <div style="display:inline-block;"><strong><?php echo $p_name; ?></strong></div>
-                            <div style="display:inline-block;float:right;margin-right:150px;"><strong> ₹ <?php echo $price; ?></strong></div>
-                            <div style="display:inline-block;float:right;margin-top:-25px;"><a href="removecart.php?id=<?php echo $c_id; ?>&id2=<?php echo $v_id; ?>" class=" add-btn">Remove</a></div>
-                            
-                            <hr style="border-top: dotted 1px;" />
-                            
-                            <?php } } else { } ?>
-                            
-                             <?php } } else { ?> 
-     
-                            <div>Empty Cart!</div>
-
-                            <?php  } ?>
-                           
-                            
-                           
-							
-                            <hr>
-                            <?php 
-								$sql55 = "SELECT * FROM cart WHERE u_id = '$u_id' LIMIT 1";
-								$result55 = $conn->query($sql55);
-								if ($result55->num_rows > 0) {                               
-								while($row55 = $result55->fetch_assoc()) { 
-									$c_id = $row55["id"];
-									$p_id = $row55["p_id"];
-									$v_id = $row55["v_id"];
-									$price = $row55["price"];
-							?>
-							
-							<?php 
-								$sql555 = "SELECT * FROM others WHERE id = '1'";
-								$result555 = $conn->query($sql555);
-								if ($result555->num_rows > 0) {                               
-								while($row555 = $result555->fetch_assoc()) { 
-									$deliverycharge = $row555["value"];
-							?>
-							
-							
-							 &nbsp;&nbsp;&nbsp;&nbsp;
-							<div style="display:inline-block;"><strong style="font-size:12px;">Delivery Charge: </strong></div>
-							<div style="display:inline-block;float:right;margin-right:150px;"><strong> ₹ <?php echo  (round($distance,0) * $deliverycharge); ?></strong></div>
-							<div style="display:inline-block;float:right;margin-top:-20px;;margin-right:10px;"><strong><?php echo  $distance; ?> Kilo Meters</strong></div>
-							
-							<?php } } else { } ?>
-						
-							
-							<?php
-									$sqlstep2ck = "SELECT SUM(price) AS total FROM cart WHERE u_id = '$u_id'";
-									$rowNumstep2ck = mysqli_query($conn, $sqlstep2ck);
-									$countstep2ck = mysqli_fetch_assoc($rowNumstep2ck);								
-								?>
-							<br><br>
-						<form action="checkout.php" method="post">
-							&nbsp;&nbsp;&nbsp;&nbsp;
-							<div style="display:inline-block;"><strong>Total: </strong></div>
-							<div style="display:inline-block;float:right;margin-right:150px;"><strong> ₹ <?php echo  (($countstep2ck["total"]) + (round($distance,0) * $deliverycharge)); ?></strong></div>
-						<input type="hidden" name="total" value="<?php echo  (($countstep2ck["total"]) + (round($distance,0) * $deliverycharge)); ?>" />
-							<div style="display:inline-block;float:right;margin-top:-25px;"><button type="submit" style="background-color:green; color:white;" class=" add-btn">CHECKOUT</button></div>
-						</form>
-							
-                            <?php } } else { } ?>
-							
-							
-							
-							
-                            
-                            
-                        </div>
                         
                         
                         <?php } } else { } ?>
@@ -261,16 +196,41 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script>
+
+$(document).on("click",".productQuantityPlus",function() {
+    var pId = $(this).attr("p-id");
+    var currentQuantity = parseInt($('.productQuantity[p-id="'+pId+'"]').text());
+    $('.productQuantity[p-id="'+pId+'"]').text(currentQuantity+1);
+});
+
+$(document).on("click",".productQuantityMinus",function() {
+    var pId = $(this).attr("p-id");
+    var currentQuantity = parseInt($('.productQuantity[p-id="'+pId+'"]').text());
+    if(currentQuantity == 0) { } else { 
+        $('.productQuantity[p-id="'+pId+'"]').text(currentQuantity-1);
+    }
+});
+
 $(document).on("click",".addToCartBtn",function() {
     var thisElem = $(this);
+    var pId = $(this).attr("p-id");
+    var quantity = $('.productQuantity[p-id="'+pId+'"]').text();
     $.post('addtocart.php',
         {
             pId : $(this).attr("p-id"),
             uId : $(this).attr("u-id"),
             vId : $(this).attr("v-id"),
             price : $(this).attr("price"),
+            quantity : quantity
         },(result) => {
             thisElem.text('Added');
+            setTimeout(()=>{
+                if(quantity == 0) {
+                    thisElem.text('Add');
+                } else {
+                    thisElem.text('Update');
+                }
+            },2000)
         }
     )
 });

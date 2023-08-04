@@ -7,7 +7,14 @@
         }
    ?>
     
-    <?php $v_id = 1; ?>
+    <?php 
+        if(isset($_POST["location"])) {
+            $location = $_POST["location"]; 
+            $_SESSION["location"] = $location;
+        } else {
+            $location = $_SESSION["location"] ; 
+        }
+    ?>
   
         <div class="content-wrapper">
             <div class="">
@@ -15,7 +22,7 @@
                     <div class="restaurant-banner row">
                         
                         	<?php 
-								$sql5 = "SELECT * FROM vendors ORDER BY id ASC LIMIT 1";
+								$sql5 = "SELECT * FROM vendors WHERE location = '$location' ORDER BY id ASC LIMIT 1";
 								$result5 = $conn->query($sql5);
 								if ($result5->num_rows > 0) {                               
 								while($row5 = $result5->fetch_assoc()) { 
@@ -26,9 +33,27 @@
 									
 							?>
                         
-                        <div class="res-banner-center col-md-7" style="background-image: url(../images/banners/vg1.jpg);background-size: cover;display: grid;justify-content: center;padding: 2%;">
-                            <h4 class="res-banner-tit" style="color:black;background: white;border-radius: 4px;padding: 4%;width: fit-content;height: fit-content;"><?php echo $business; ?></h4>
-                            <p class="res-banner-txt" style="text-align: center;color: black;background: white;border-radius: 4px;padding: 4%;width: fit-content;height: fit-content;margin: auto;"><?php echo $vendorlocation; ?></p>
+                        <div class="res-banner-center col-md-7" style="background-image: url(../images/banners/banner1.jpg);background-size: cover;display: grid;justify-content: center;padding: 2%;height: 250px;">
+                            <form action="products.php" class="onLocationSelectForm" method="post"
+                                    style="position: absolute;
+                                            bottom: 16%;
+                                            left: 4%;"
+                            >
+                            <h4 class="res-banner-tit" style="font-size:12px;color:black;background: white;border-radius: 4px;padding: 4%;width: fit-content;height: fit-content;"><?php echo $business; ?></h4>
+                            <p class="res-banner-txt" style="text-align: center;color: black;background: white;border-radius: 4px;padding: 4%;width: fit-content;height: fit-content;margin: auto;">
+                                <select name="location" class="form-control mb-2 onLocationSelect"
+                                    style="padding: 0;
+                                            height: fit-content;
+                                            border: none;
+                                            font-size:12px;"
+                                >
+                                    <option value="<?php echo $vendorlocation; ?>" ><?php echo $vendorlocation; ?></option>
+                                    <option value="Madhapur">Madhapur</option>
+                                    <option value="Kukatpally">Kukatpally</option>
+                                    <option value="Gachibowli">Gachibowli</option>
+                                </select>
+                            </p>
+                            </form>
                         </div>
                         <div class="res-banner-right col-md-2"></div>
                     </div>
@@ -104,6 +129,32 @@
                            
 							
                             <hr>
+
+
+
+                            <div style="padding: 2% 4%;display: grid;grid-template-columns: auto auto;">
+                                <div style="display:inline-block;">
+                                    <strong style="font-size:12px;">Coupon Code: </strong>
+                                </div>
+                                <div style="display: grid;
+                                            gap: 2%;
+                                            justify-content: end;
+                                            grid-template-columns: auto auto;"> 
+                                    <input type="text" class="couponCode" placeholder="CODE" style="width: 100px;
+                                                                                                    border: 1px solid gray;
+                                                                                                    border-radius: 4px;
+                                                                                                    text-align:center;" />
+                                    <a class="applyCouponCode" style="background-color: green;
+                                                                        color: white;
+                                                                        border-radius: 6px;
+                                                                        font-size: 14px;
+                                                                        height: fit-content;
+                                                                        cursor:pointer;
+                                                                        padding: 2px 12px;" >Apply</a>
+                                </div>
+                            </div>
+
+
                             <?php 
 
                                 $total = 0;

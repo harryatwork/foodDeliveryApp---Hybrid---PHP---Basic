@@ -99,7 +99,7 @@
         <span><i class="fa fa-th-list" aria-hidden="true"></i></span>
         <span>Orders</span>
     </a>
-    <a class="tab tab--fab" href="index.php">
+    <a class="tab tab--fab" href="products.php">
         <div class="top">
           <div class="fab">
           <i class="fa fa-home" aria-hidden="true"></i>

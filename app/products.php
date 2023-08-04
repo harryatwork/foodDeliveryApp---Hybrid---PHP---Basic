@@ -1,13 +1,22 @@
 <?php include('header_stores.php'); ?>
 
 
+
+
    <?php 
         if(!isset($_SESSION["email"])) {
             header("location:index.php");
         }
    ?>
     
-    <?php $v_id = 1; ?>
+    <?php 
+        if(isset($_POST["location"])) {
+            $location = $_POST["location"]; 
+            $_SESSION["location"] = $location;
+        } else {
+            $location = $_SESSION["location"] ; 
+        }
+    ?>
   
         <div class="content-wrapper">
             <div class="">
@@ -15,7 +24,7 @@
                     <div class="restaurant-banner row">
                         
                         	<?php 
-								$sql5 = "SELECT * FROM vendors ORDER BY id ASC LIMIT 1";
+								$sql5 = "SELECT * FROM vendors WHERE location = '$location' ORDER BY id ASC LIMIT 1";
 								$result5 = $conn->query($sql5);
 								if ($result5->num_rows > 0) {                               
 								while($row5 = $result5->fetch_assoc()) { 
@@ -26,14 +35,33 @@
 									
 							?>
                         
-                        <div class="res-banner-center col-md-7" style="background-image: url(../images/banners/vg1.jpg);background-size: cover;display: grid;justify-content: center;padding: 2%;">
-                            <h4 class="res-banner-tit" style="color:black;background: white;border-radius: 4px;padding: 4%;width: fit-content;height: fit-content;"><?php echo $business; ?></h4>
-                            <p class="res-banner-txt" style="text-align: center;color: black;background: white;border-radius: 4px;padding: 4%;width: fit-content;height: fit-content;margin: auto;"><?php echo $vendorlocation; ?></p>
+                        <div class="res-banner-center col-md-7" style="background-image: url(../images/banners/banner1.jpg);background-size: cover;display: grid;justify-content: center;padding: 2%;height: 250px;">
+                            <form action="products.php" class="onLocationSelectForm" method="post"
+                                    style="position: absolute;
+                                            bottom: 16%;
+                                            left: 4%;"
+                            >
+                            <h4 class="res-banner-tit" style="font-size:12px;color:black;background: white;border-radius: 4px;padding: 4%;width: fit-content;height: fit-content;"><?php echo $business; ?></h4>
+                            <p class="res-banner-txt" style="text-align: center;color: black;background: white;border-radius: 4px;padding: 4%;width: fit-content;height: fit-content;margin: auto;">
+                                <select name="location" class="form-control mb-2 onLocationSelect"
+                                    style="padding: 0;
+                                            height: fit-content;
+                                            border: none;
+                                            font-size:12px;"
+                                >
+                                    <option value="<?php echo $vendorlocation; ?>" ><?php echo $vendorlocation; ?></option>
+                                    <option value="Madhapur">Madhapur</option>
+                                    <option value="Kukatpally">Kukatpally</option>
+                                    <option value="Gachibowli">Gachibowli</option>
+                                </select>
+                            </p>
+                            </form>
                         </div>
                         <div class="res-banner-right col-md-2"></div>
                     </div>
                 </div>
             </div>
+
 
 			
             <div class="food-section-outer">
@@ -82,7 +110,7 @@
 								<div class="food-list-view">
 									<div class="food-list-view-section" 
                                         style="display: grid;
-                                                grid-template-columns: 1fr 1fr;
+                                                grid-template-columns: 1fr;
                                                 gap: 4% 14%;"
                                     >
 										<!-- <div class="food-list-sec-head"></div> -->
@@ -97,15 +125,19 @@
     									$price = $row7["price"];
     							?>		
 										
-										<div class="food-list-view-box row  veg " style="box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.2);border-radius: 10px; padding: 0;padding-top:20px;">
+										<div class="food-list-view-box row  veg " style="    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.2);border-radius: 10px;padding: 0;padding-top: 20px;">
 											<div class="col-sm-9"
                                                 style="display: grid;gap: 4%;"
                                             >
-												<div class="row m-0" style="display:grid;">
-													<img src="../images/products/<?= $row7["image"]; ?>" class="veg-icon" style="width: 100%;border-radius: 6px;height: 160px;object-fit: cover;">
-													<div class="food-menu-details food-list-details" style="margin: 0;padding: 4% 0% 6%;">
+												<div class=" m-0" style="display:grid;grid-template-columns: auto auto;">
+													<img src="../images/products/<?= $row7["image"]; ?>" class="veg-icon" style="width: 100px;border-radius: 6px;height: 100px;object-fit: cover;">
+													<div class="food-menu-details food-list-details" style="margin: 0;padding: 4% 3% 6%;">
 														<h6><?php echo $name; ?></h6>
-															<p style="display:grid;grid-template-columns: auto auto;justify-content: space-between;">
+                                                        <p style="font-size: 12px;"><?= $row7["description"]; ?></p>
+															<p style="display: grid;
+                                                                        grid-template-columns: auto auto;
+                                                                        justify-content: end;
+                                                                        gap: 4%;">
                                                                 <span>₹ <?php echo $price; ?></span>
                                                                 <span style="font-size: 10px;">unit(gms/no) <?= $row7["quantity"]; ?></span>
                                                             </p>
@@ -124,10 +156,11 @@
             								<div class="col-sm-3" style="padding-bottom: 10px;">
 												<div class="add-btn-wrap text-right" 
                                                      style="display: grid;
-                                                            /* grid-template-columns: 1fr auto; */
+                                                            grid-template-columns: 30% 20%;
                                                             align-items: center;
+                                                            justify-content: end;
                                                             gap: 10%;
-                                                            margin-bottom: 5%;">
+                                                            margin: 0;">
                                                     <div class="productQuantityDiv"
                                                          style="display: grid;
                                                                 grid-template-columns: auto auto auto;
@@ -234,6 +267,11 @@ $(document).on("click",".addToCartBtn",function() {
         }
     )
 });
+
+$('.onLocationSelect').on('change', function() {
+  $(".onLocationSelectForm").submit();
+});
+
 </script>
   
 

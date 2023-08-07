@@ -15,6 +15,7 @@ $comm = ($pricee * ($pcom/100));
 $price = $pricee + $comm;
 
 $quantity = $_POST['quantity'];
+$description = $_POST['description'];
 
 
 $v_id = $_POST['v_id'];
@@ -38,8 +39,8 @@ if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO products (name, v_id, cat, price, quantity, image, date)
-VALUES ('$name', '$v_id', '$category',  '$price', '$quantity', '$targetFileName', '$dater')";
+$sql = "INSERT INTO products (name, v_id, cat, price, quantity, description, image, date)
+VALUES ('$name', '$v_id', '$category',  '$price', '$quantity', '$description', '$targetFileName', '$dater')";
  
 if ($conn->query($sql) === TRUE) {
 

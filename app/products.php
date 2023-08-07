@@ -79,7 +79,7 @@
 									$cat = $row6["cat"];
 							?>
                                 <a href="#<?php echo $cat; ?>" class="food-filters-item filter-scroll-menu"
-                                    style="background: #ffc1c0;border-radius: 8px;"
+                                    style="background: #ffc1c0;border-radius: 8px;text-align:center;"
                                 ><?php echo $cat; ?></a>
                             <?php } } else { } ?>
                             </div>

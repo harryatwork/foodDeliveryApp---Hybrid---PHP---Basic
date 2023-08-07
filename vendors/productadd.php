@@ -81,6 +81,14 @@
 																</label>
 																<input class="form-control" name="quantity" type="number" required="true"/>
 															</div>
+
+															<div class="form-group label-floating">
+																<label class="control-label">
+																	Description
+																	<small>*</small>
+																</label>
+																<textarea class="form-control" name="description" type="text" required="true"></textarea>
+															</div>
 														
 															<input type="hidden" name="v_id" value="<?php echo $v_id; ?>" />
 															

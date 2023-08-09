@@ -1336,3 +1336,87 @@
 [13-Jul-2019 04:03:01 UTC] PHP Notice:  Undefined index: email in /home/hk3693/public_html/appgrep/localcart/header_index.php on line 78
 [13-Jul-2019 04:03:05 UTC] PHP Notice:  Undefined index: email in /home/hk3693/public_html/appgrep/localcart/header_index.php on line 78
 [13-Jul-2019 04:03:06 UTC] PHP Notice:  Undefined index: email in /home/hk3693/public_html/appgrep/localcart/header_index.php on line 78
+[07-Aug-2023 06:09:46 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/sendobuf/wip.vdofy.com/custom/app/header_index.php on line 2
+[07-Aug-2023 06:09:49 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/sendobuf/wip.vdofy.com/custom/app/header_index.php on line 2
+[07-Aug-2023 06:11:11 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's' AND v_id = '1'' at line 1 in /home2/sendobuf/wip.vdofy.com/custom/app/products.php:104
+Stack trace:
+#0 /home2/sendobuf/wip.vdofy.com/custom/app/products.php(104): mysqli_query(Object(mysqli), 'SELECT COUNT(*)...')
+#1 {main}
+  thrown in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 104
+[07-Aug-2023 06:11:58 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's' AND v_id = '1'' at line 1 in /home2/sendobuf/wip.vdofy.com/custom/app/products.php:104
+Stack trace:
+#0 /home2/sendobuf/wip.vdofy.com/custom/app/products.php(104): mysqli_query(Object(mysqli), 'SELECT COUNT(*)...')
+#1 {main}
+  thrown in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 104
+[07-Aug-2023 07:58:52 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 8
+[07-Aug-2023 07:58:52 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 17
+[07-Aug-2023 07:58:57 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 8
+[07-Aug-2023 07:58:57 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 17
+[07-Aug-2023 07:59:06 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/sendobuf/wip.vdofy.com/custom/app/header_index.php on line 2
+[07-Aug-2023 07:59:06 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/sendobuf/wip.vdofy.com/custom/app/header_index.php on line 2
+[07-Aug-2023 11:06:24 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 8
+[07-Aug-2023 11:06:24 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 17
+[07-Aug-2023 11:06:28 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 8
+[07-Aug-2023 11:06:28 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 17
+[07-Aug-2023 11:06:28 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 8
+[07-Aug-2023 11:06:28 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 17
+[07-Aug-2023 11:06:34 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/sendobuf/wip.vdofy.com/custom/app/header_index.php on line 2
+[07-Aug-2023 11:06:34 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/sendobuf/wip.vdofy.com/custom/app/header_index.php on line 2
+[07-Aug-2023 11:25:41 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/sendobuf/wip.vdofy.com/custom/app/header_index.php on line 2
+[07-Aug-2023 11:25:42 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/sendobuf/wip.vdofy.com/custom/app/header_index.php on line 2
+[07-Aug-2023 13:05:35 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 351
+[07-Aug-2023 13:05:35 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 360
+[07-Aug-2023 13:05:47 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/sendobuf/wip.vdofy.com/custom/app/header_index.php on line 2
+[07-Aug-2023 13:05:47 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/sendobuf/wip.vdofy.com/custom/app/header_index.php on line 2
+[07-Aug-2023 13:06:10 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 351
+[07-Aug-2023 13:06:10 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 360
+[07-Aug-2023 13:07:41 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 351
+[07-Aug-2023 13:07:41 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 360
+[07-Aug-2023 13:08:03 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 351
+[07-Aug-2023 13:08:03 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 360
+[07-Aug-2023 13:08:03 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 596
+[07-Aug-2023 13:08:05 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 351
+[07-Aug-2023 13:08:05 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 360
+[07-Aug-2023 13:08:05 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 596
+[07-Aug-2023 13:09:06 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 355
+[07-Aug-2023 13:09:06 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 364
+[07-Aug-2023 13:09:06 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 600
+[07-Aug-2023 13:09:27 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 355
+[07-Aug-2023 13:09:27 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 364
+[07-Aug-2023 13:09:27 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 600
+[07-Aug-2023 13:09:29 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/orders.php on line 326
+[07-Aug-2023 13:09:29 UTC] PHP Warning:  Undefined array key "email" in /home2/sendobuf/wip.vdofy.com/custom/app/orders.php on line 352
+[07-Aug-2023 13:09:29 UTC] PHP Warning:  Undefined variable $u_id in /home2/sendobuf/wip.vdofy.com/custom/app/orders.php on line 372
+[07-Aug-2023 13:09:31 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 355
+[07-Aug-2023 13:09:31 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 364
+[07-Aug-2023 13:09:31 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 600
+[07-Aug-2023 13:09:32 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/cart.php on line 6
+[07-Aug-2023 13:09:32 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/cart.php on line 15
+[07-Aug-2023 13:09:33 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 355
+[07-Aug-2023 13:09:33 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 364
+[07-Aug-2023 13:09:33 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 600
+[07-Aug-2023 13:11:18 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 364
+[07-Aug-2023 13:11:18 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/sendobuf/wip.vdofy.com/custom/app/header_stores.php:5) in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 600
+[07-Aug-2023 13:12:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_action() in /home2/sendobuf/wip.vdofy.com/custom/app/products.php:358
+Stack trace:
+#0 {main}
+  thrown in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 358
+[07-Aug-2023 13:13:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_action() in /home2/sendobuf/wip.vdofy.com/custom/app/products.php:358
+Stack trace:
+#0 {main}
+  thrown in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 358
+[07-Aug-2023 13:13:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function add_action() in /home2/sendobuf/wip.vdofy.com/custom/app/products.php:358
+Stack trace:
+#0 {main}
+  thrown in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 358
+[07-Aug-2023 13:13:47 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 365
+[07-Aug-2023 13:13:55 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 365
+[07-Aug-2023 13:14:11 UTC] PHP Warning:  Undefined array key "location" in /home2/sendobuf/wip.vdofy.com/custom/app/products.php on line 361
+[07-Aug-2023 13:14:14 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/sendobuf/wip.vdofy.com/custom/app/header_index.php on line 2
+[07-Aug-2023 13:14:14 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/sendobuf/wip.vdofy.com/custom/app/header_index.php on line 2
+[07-Aug-2023 16:49:27 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/sendobuf/wip.vdofy.com/custom/app/header_index.php on line 2
+[07-Aug-2023 16:49:27 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/sendobuf/wip.vdofy.com/custom/app/header_index.php on line 2
+[07-Aug-2023 16:49:30 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/sendobuf/wip.vdofy.com/custom/app/header_index.php on line 2
+[07-Aug-2023 16:49:30 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/sendobuf/wip.vdofy.com/custom/app/header_index.php on line 2
+[07-Aug-2023 16:55:49 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/sendobuf/wip.vdofy.com/custom/app/header_index.php on line 2
+[07-Aug-2023 16:55:51 UTC] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home2/sendobuf/wip.vdofy.com/custom/app/header_index.php on line 2

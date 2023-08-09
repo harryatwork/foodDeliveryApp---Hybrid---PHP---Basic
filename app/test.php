@@ -1,250 +1,362 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.2/flexslider.css">
-
-<link rel="stylesheet" href="flex.css">
-<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.2/jquery.flexslider.js"></script>
-
-<!--
-
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/linuxguist/flexslider@main/css/flexslider.css" type="text/css" media="screen" />
-
-  <script src="https://cdn.jsdelivr.net/gh/linuxguist/flexslider@main/js/modernizr.js"></script>
-
-  <script defer src="https://cdn.jsdelivr.net/gh/linuxguist/flexslider@main/js/jquery.flexslider.js"></script>
-
-  <script src="https://cdn.jsdelivr.net/gh/linuxguist/flexslider@main/js/jquery.easing.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/linuxguist/flexslider@main/js/jquery.mousewheel.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/gh/linuxguist/flexslider@main/js/demo.js"></script>
-
--->
-
-<style type="text/css">
-
-.slider_background{
-background:#eee;
-}
-.slide-caption {
-padding:0;
-height:76px;
-margin:0;
-margin-top:34%;
-width:auto;
-}
-.slide-caption .btn-primary{
-width:100%;
-height:100%;
-display:inline-block;
-vertical-align: middle;
-font-weight:normal;
-font-size:18px;
-}
-.slide-caption .btn-primary span{
-display:inline-block;
-vertical-align: middle;
-}
-.centerer{
-height:100%;
-width:0;
-display:inline-block;
-vertical-align: middle;
-}
-.slide-caption{
-color:khaki;
-background-color:#373737;
-}
-.slider-container{
-overflow:hidden;
-}
-.slide-caption .row, .slide-caption .col-md-2{
-height:100%;
-}
-.slide-caption .slide-text{
-padding:6px 45px;
-}
-.slider-container .slider-left, .slider-container .slider-right {
-padding:0;
-margin-bottom: -9999px;
-padding-bottom: 9986px;
-}
-.slider-right{
-padding:15px;
-background:#00aced;
-}
-.slider-right h2{
-font-weight:normal!important;
-font-family: Roboto, sans-serif;
-color:#fff !important;
-text-transform: uppercase;
-font-size:18px;
-line-height: 26px;
-margin: 15px;
-padding-left: 15px;
-}
-.slider-right ul{
-margin:0;
-padding:0;
-list-style:none;
-}
-.slider-right .arrow{
--webkit-transition: all 0.2s ease-out;
-transition: all 0.2s ease-out;
-line-height:normal;
-float:right;
-color:#346100;
-font-weight: 100;
-font-size:14px;
-}
-.slide-title{
-margin-bottom: 3px;
-font-size:20px;
-color:#fff;
-}
-.slider-right ul li a{
--webkit-transition: all 0.2s ease-out;
-transition: all 0.2s ease-out;
-display:block;
-padding:20px 30px;
-background:#f6f5f6;
-text-transform: uppercase;
-font-size:16px;
-color:#475055;
-margin-bottom: -1px;
-}
-.slider-right ul li a:hover{
-background:#00aced;
-text-decoration:none;
-color:#fff;
-}
-.slider-right ul li a:hover .arrow{
-color:#fff;
-}
-.slider-right .glyphicon{
-display:inline-block;
+<style>
+@keyframes tonext {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: 100%;
+  }
+  98% {
+    left: 100%;
+  }
+  99% {
+    left: 0;
+  }
 }
 
+@keyframes tostart {
+  75% {
+    left: 0;
+  }
+  95% {
+    left: -300%;
+  }
+  98% {
+    left: -300%;
+  }
+  99% {
+    left: 0;
+  }
+}
+
+@keyframes snap {
+  96% {
+    scroll-snap-align: center;
+  }
+  97% {
+    scroll-snap-align: none;
+  }
+  99% {
+    scroll-snap-align: none;
+  }
+  100% {
+    scroll-snap-align: center;
+  }
+ }
+
+
+.banners {
+	 position: relative;
+	 filter: drop-shadow(0 0 10px #000 3);
+	 height: 700px;
+}
+ .banners *::-webkit-scrollbar {
+	 width: 0;
+}
+ .banners *::-webkit-scrollbar-track {
+	 background: transparent;
+}
+ .banners *::-webkit-scrollbar-thumb {
+	 background: transparent;
+	 border: none;
+}
+ .banners * {
+	 -ms-overflow-style: none;
+}
+ .banners__viewport, .banners__li {
+	 list-style: none;
+	 margin: 0;
+	 padding: 0;
+}
+ .banners__viewport {
+	 position: absolute;
+	 overflow-y: hidden;
+	 top: 0;
+	 right: 0;
+	 bottom: 0;
+	 left: 0;
+	 display: flex;
+	 overflow-x: scroll;
+	 counter-reset: item;
+	 scroll-behavior: smooth;
+	 scroll-snap-type: x mandatory;
+}
+ .banners__li__img {
+	 width: 100%;
+	 height: 100%;
+	 object-fit: cover;
+}
+ .banners__li__nav {
+	 position: absolute;
+	 top: 38%;
+	 color: white;
+	 display: grid;
+	 justify-content: space-between;
+	 grid-template-columns: auto auto;
+	 width: 100%;
+	 z-index: 99;
+}
+ .banners__li__nav a {
+	 color: white;
+}
+ .banners__slide {
+	 position: relative;
+	 flex: 0 0 100%;
+	 width: 100%;
+	 background-color: #f99;
+	 counter-increment: item;
+}
+ .banners .bannerOne ::ng-deep .bannerContent {
+	 display: grid;
+	 grid-template-rows: auto 1fr;
+	 position: absolute;
+	 top: 0;
+	 width: 100%;
+	 height: 100%;
+}
+ .banners .bannerOne ::ng-deep .bannerContent .contentSecOne {
+	 padding: 1% 4%;
+	 display: grid;
+	 gap: 10%;
+	 width: 15%;
+	 text-align: center;
+	 width: fit-content;
+}
+ .banners .bannerOne ::ng-deep .bannerContent .contentSecOne p {
+	 margin: 0;
+	 font-size: 24px;
+	 letter-spacing: 0.7px;
+	 color: white;
+}
+ .banners .bannerOne ::ng-deep .bannerContent .contentSecOne .contentSecOneSub {
+	 font-size: 36px;
+	 letter-spacing: 0.7px;
+	 color: white;
+	 display: flex;
+	 align-items: center;
+}
+ .banners .bannerOne ::ng-deep .bannerContent .contentSecOne .contentSecOneSub span {
+	 display: grid;
+	 padding: 2px;
+}
+ .banners .bannerOne ::ng-deep .bannerContent .contentSecOne .contentSecOneSub span img {
+	 width: 40px;
+}
+ .banners .bannerOne ::ng-deep .bannerContent .contentSectionTwo {
+	 display: grid;
+	 grid-template-rows: auto auto 1fr;
+	 justify-content: center;
+	 margin: 0 auto 8%;
+	 background: white;
+	 width: fit-content;
+	 padding: 16px 16px 0;
+	 border-radius: 10px;
+}
+ .banners .bannerOne ::ng-deep .bannerContent .contentSectionTwo h4 {
+	 font-weight: normal;
+	 margin: 0;
+	 font-size: 24px;
+	 letter-spacing: 0.7px;
+}
+ .banners .bannerOne ::ng-deep .bannerContent .contentSectionTwo p {
+	 font-style: italic;
+	 letter-spacing: 0.7px;
+	 margin: 7px 0;
+}
+ .banners .bannerOne ::ng-deep .bannerContent .contentSectionTwo .contentSecTwoSubOne {
+	 width: 600px;
+}
+ .banners .bannerOne ::ng-deep .bannerContent .contentSectionTwo .contentSecTwoSubOne video {
+	 object-fit: cover;
+	 width: 100%;
+	 height: 100%;
+}
+ .banners .bannerOne ::ng-deep .bannerContent .contentSectionTwo .contentSecTwoSubTwo {
+	 display: flex;
+	 justify-content: center;
+	 font-size: 14px;
+	 padding: 1%;
+	 gap: 8%;
+}
+ .banners .bannerTwo ::ng-deep .bannerContent {
+	 display: grid;
+	 position: absolute;
+	 top: 0;
+	 width: 100%;
+	 height: 100%;
+}
+ .banners .bannerTwo ::ng-deep .bannerContent .contentSecOne {
+	 display: grid;
+	 gap: 10%;
+	 width: 15%;
+	 text-align: left;
+	 height: fit-content;
+	 line-height: 0.8;
+	 letter-spacing: 0.7px;
+	 padding: 5% 8%;
+}
+ .banners .bannerTwo ::ng-deep .bannerContent .contentSecOne p {
+	 font-size: 32px;
+	 margin: 0;
+}
+ .banners .bannerTwo ::ng-deep .bannerContent .contentSecOne span {
+	 font-size: 40px;
+	 color: #c6601d;
+}
+ .banners .bannerThree ::ng-deep .bannerContent {
+	 display: grid;
+	 position: absolute;
+	 justify-content: space-between;
+	 top: 0;
+	 width: 100%;
+	 height: 100%;
+	 grid-template-columns: 40% 50%;
+	 align-items: end;
+	 grid-template-rows: 1fr 10%;
+	 justify-content: end;
+	 gap: 5%;
+}
+ .banners .bannerThree ::ng-deep .bannerContent .contentSecOne {
+	 padding: 4%;
+	 line-height: 40px;
+	 background: linear-gradient(0deg, rgba(72, 70, 39, 1) 0%, rgba(72, 70, 39, 0.7) 40%, rgba(255, 255, 255, 0) 100%);
+	 border-radius: 16px;
+	 color: white;
+	 font-size: 16px;
+	 letter-spacing: 0.7px;
+}
+ .banners .bannerThree ::ng-deep .bannerContent .contentSecOne h4 {
+	 font-size: 24px;
+}
+ .banners .bannerThree ::ng-deep .bannerContent .contentSectionTwo .contentSecTwoSub {
+	 height: 400px;
+	 border: 4px solid #e3b438;
+	 padding: 4px;
+}
+ .banners .bannerThree ::ng-deep .bannerContent .contentSectionTwo .contentSecTwoSub video {
+	 object-fit: cover;
+	 width: 100%;
+	 height: 100%;
+}
+ .banners .bannerThree ::ng-deep .bannerContent .contentSectionTwo .contentSecTwoSub img {
+	 width: 100%;
+	 height: 100%;
+}
+ .banners__slide:nth-child(even) {
+	 background-color: #99f;
+}
+ .banners__snapper {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 100%;
+	 scroll-snap-align: center;
+}
+ .banners__navigation {
+	 position: absolute;
+	 right: 0;
+	 bottom: 0;
+	 left: 0;
+	 text-align: center;
+}
+ .banners__navigation-button {
+	 display: inline-block;
+	 width: 25px;
+	 background: white;
+	 height: 3px;
+	 border-radius: 4px;
+	 border: none;
+	 transition: transform 0.1s;
+	 text-decoration: none;
+}
+ .banners__navigation-button::after {
+	 width: 100%;
+	 display: block;
+	 content: '\00a0';
+}
+ .banners .navArrow {
+	 height: fit-content;
+	 width: fit-content;
+	 font-size: 200px;
+	 font-weight: 100;
+	 opacity: 0.2;
+}
+ .banners .navArrow:hover {
+	 opacity: 0.7;
+}
+ @media (hover: hover) {
+	 .banners__snapper {
+		 animation-name: tonext, snap;
+		 animation-timing-function: ease;
+		 animation-duration: 4s;
+		 animation-iteration-count: infinite;
+	}
+	 .banners__slide:last-child .banners__snapper {
+		 animation-name: tostart, snap;
+	}
+}
+ @media (prefers-reduced-motion: reduce) {
+	 .banners__snapper {
+		 animation-name: none;
+	}
+}
+ .banners:hover .banners__snapper, .banners:focus-within .banners__snapper {
+	 animation-name: none;
+}
+ .banners__navigation-list {
+	 display: flex;
+	 justify-content: center;
+	 gap: 10px;
+	 padding: 2% 0;
+}
+ .banners__navigation-item {
+	 display: inline-block;
+}
+ .banners__navigation-item .currentSlideBottomNav {
+	 height: 5px;
+	 width: 45px;
+}
+ .banners__viewport::before, .banners__viewport::after, .banners__prev, .banners__next {
+	 position: absolute;
+	 top: 0;
+	 margin-top: 10%;
+	 width: 4rem;
+	 height: 4rem;
+	 transform: translateY(-50%);
+	 border-radius: 50%;
+	 font-size: 0;
+	 outline: 0;
+}
+ .banners__viewport::before, .banners__prev {
+	 left: -1rem;
+}
+ .banners__viewport::after, .banners__next {
+	 right: -1rem;
+}
+ 
 </style>
 
-<script>
-$(document).ready(function () {
-if (jQuery().flexslider) {
-    //flexslider ticker
-    $('.flexslider-ticker').each(function() {
-      var tickerSettings =  {
-        animation: "fade",
-        animationLoop: false,
-        selector: ".items > .item",
-        move: 1,
-        controlNav: true,
-        directionNav: true,
-        pausePlay: false,
-        slideshow: true,
-        direction: 'vertical',
-        slideshowSpeed: 2000,           //Integer: Set the speed of the slideshow cycling, in milliseconds
-        animationSpeed: 0,            //Integer: Set the speed of animations, in milliseconds
-        pauseOnAction: true,            //Boolean: Pause the slideshow when interacting with control elements, highly recommended.
-        pauseOnHover: false,            //Boolean: Pause the slideshow when hovering over slider, then resume when no longer hovering
-        touch: true,                    //{NEW} Boolean: Allow touch swipe navigation of the slider on touch-enabled devices
-        video: false,                   //{NEW} Boolean: If using video in the slider, will prevent CSS3 3D Transforms to avoid graphical glitches
-
-
-      };
-      $(this).flexslider(tickerSettings);
-    });
-
-    // flexsliders
-    $('.flexslider').each(function() {
-      var sliderSettings =  {
-        animation: $(this).attr('data-transition'),
-        selector: ".slides > .slide",
-        controlNav: true,
-        directionNav: true,
-        pausePlay: false,
-        slideshow: true,
-        direction: 'vertical',
-        slideshowSpeed: 2000,           //Integer: Set the speed of the slideshow cycling, in milliseconds
-        animationSpeed: 0,            //Integer: Set the speed of animations, in milliseconds
-        pauseOnAction: true,            //Boolean: Pause the slideshow when interacting with control elements, highly recommended.
-        pauseOnHover: false,            //Boolean: Pause the slideshow when hovering over slider, then resume when no longer hovering
-        touch: true,                    //{NEW} Boolean: Allow touch swipe navigation of the slider on touch-enabled devices
-        video: false,                   //{NEW} Boolean: If using video in the slider, will prevent CSS3 3D Transforms to avoid graphical glitches        
-        smoothHeight: true,
-        prevText: "<<",
-        nextText: ">>",
-        sync: $(this).data('slidernav') || '',
-        start: function(slider) {
-          if (slider.find('[data-slide-bg-stretch=true]').length > 0) {
-            slider.find('[data-slide-bg-stretch=true]').each(function() {
-              if ($(this).data('slide-bg')) {
-                $(this).backstretch($(this).data('slide-bg'));
-                // $(this).data('slide-bg');
-              }
-            });
-          }
-        }
-      };
+<section class="banners" aria-label="Gallery">
+  <ol class="banners__viewport">
+  
+      <li class="banners__li banners__slide" 
+          id="slide1"
+      >
+          <img class="banners__li__img" 
+               src="https://www.designingbuildings.co.uk/w/images/6/6f/Field-175959_640.jpg" 
+               alt="" />
+        <div class="banners__snapper"></div>
+      </li>
       
-      $('html').addClass('has-flexslider');
-      $(this).flexslider(sliderSettings);
-    });
-    // $(window).delay(1000).trigger('resize'); //make sure height is right load assets loaded
-}})
-</script>
-
-<!-- @zone - hightlighted -->
-<!--Showshow-->
-<div class="container slider-container">
-   <div class="row">
-      <div class="col-md-12 slider-left">
-         <section class="flexslider-wrapper">
-            <div id="main-slider" class="flexslider" data-transition="fade" data-page-class="slider-full-width">
-               <div class="slides">
-                  <div data-slide-alt="alt" data-slide-bg-stretch=true class="slide slide-bg" data-slide-bg="https://i.imgur.com/GRRgUd3.jpg">
-                     <div class="slide-caption">
-                        <!-- <div class="row">
-                           <div class="col-md-12">
-                              <div class="slide-text">
-                                 <div class="slide-title">This is Slide #1</div>
-                                 This is text for the first slide.
-                              </div>
-                           </div>
-                        </div> -->
-                     </div>
-                  </div>
-                  <div data-slide-alt="alt" data-slide-bg-stretch=true class="slide slide-bg" data-slide-bg="https://i.imgur.com/3bL2SS0.jpg">
-                     <div class="slide-caption">
-                        <!-- <div class="row">
-                           <div class="col-md-12">
-                              <div class="slide-text">
-                                 <div class="slide-title">This is Slide #2</div>
-                                 This is text for the second slide.
-                              </div>
-                           </div>
-                        </div> -->
-                     </div>
-                  </div>
-                  <div data-slide-alt="alt" data-slide-bg-stretch=true class="slide slide-bg" data-slide-bg="https://i.imgur.com/rVDVtJa.jpg">
-                     <div class="slide-caption">
-                        <!-- <div class="row">
-                           <div class="col-md-12">
-                              <div class="slide-text">
-                                 <div class="slide-title">This is Slide #3</div>
-                                 This is text for the third slide.
-                              </div>
-                           </div>
-                        </div> -->
-                     </div>
-                  </div>
-               </div>
-         </section>
-         </div>
-      </div>
-   </div>
-</div>
-
+      <li class="banners__li banners__slide" 
+          id="slide1"
+      >
+          <img class="banners__li__img" 
+               src="https://www.nobroker.in/blog/wp-content/uploads/2023/01/Types-Of-Land-Zoning-1.jpg" 
+               alt="" />
+        <div class="banners__snapper"></div>
+      </li>
+    
+  </ol>
+</section>

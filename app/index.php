@@ -32,16 +32,23 @@
           style="border: 2px solid black;  height: fit-content; background-color:lightblue; border-radius: 20px;margin: auto;"
         >
           <div class="col-md-8 py-3">
-            <form action="products.php" method="post">
+            <form action="products.php" method="get">
             <center>
-              <img src="../images/mainpage/logo.png" alt="" width="300px;" />
+              <img src="../images/logo.png" alt="" width="300px;" />
               <h5>Groceries Delivered In 1 Hour!</h5>
             </center>
 
             <select name="location" class="form-control mb-2">
-              <option value="Madhapur">Madhapur</option>
-              <option value="Kukatpally">Kukatpally</option>
-              <option value="Gachibowli">Gachibowli</option>
+            <?php
+                $sqlLocations = "SELECT DISTINCT(location) FROM vendors";
+                $resultLocations = $conn->query($sqlLocations);
+                if($resultLocations->num_rows > 0) {
+                while($rowLocations = $resultLocations->fetch_assoc()) {
+            ?>
+                <option value="<?= $rowLocations['location']; ?>"><?= $rowLocations['location']; ?></option>
+            <?php
+                } } else { } 
+            ?>
             </select>
             
             <?php if(isset($_SESSION['email'])) { ?>

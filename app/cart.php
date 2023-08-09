@@ -34,26 +34,7 @@
 							?>
                         
                         <div class="res-banner-center col-md-7" style="background-image: url(../images/banners/banner1.jpg);background-size: cover;display: grid;justify-content: center;padding: 2%;height: 250px;">
-                            <form action="products.php" class="onLocationSelectForm" method="post"
-                                    style="position: absolute;
-                                            bottom: 16%;
-                                            left: 4%;"
-                            >
-                            <h4 class="res-banner-tit" style="font-size:12px;color:black;background: white;border-radius: 4px;padding: 4%;width: fit-content;height: fit-content;"><?php echo $business; ?></h4>
-                            <p class="res-banner-txt" style="text-align: center;color: black;background: white;border-radius: 4px;padding: 4%;width: fit-content;height: fit-content;margin: auto;">
-                                <select name="location" class="form-control mb-2 onLocationSelect"
-                                    style="padding: 0;
-                                            height: fit-content;
-                                            border: none;
-                                            font-size:12px;"
-                                >
-                                    <option value="<?php echo $vendorlocation; ?>" ><?php echo $vendorlocation; ?></option>
-                                    <option value="Madhapur">Madhapur</option>
-                                    <option value="Kukatpally">Kukatpally</option>
-                                    <option value="Gachibowli">Gachibowli</option>
-                                </select>
-                            </p>
-                            </form>
+                            
                         </div>
                         <div class="res-banner-right col-md-2"></div>
                     </div>

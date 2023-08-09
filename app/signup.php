@@ -43,7 +43,7 @@
               <?php } else { ?>
                   <p style="font-size:13px;">Groceries Delivered In 1 Hour! </p>
               <?php } } ?>
-              <img src="../images/mainpage/logo.png" alt="" width="300px;" />
+              <img src="../images/logo.png" alt="" width="300px;" />
               <h5>Groceries Delivered In 1 Hour!</h5>
             </center>
 

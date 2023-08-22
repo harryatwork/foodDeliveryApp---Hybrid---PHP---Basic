@@ -112,27 +112,32 @@
                             <hr>
 
 
+                            <input type="hidden" class="uId" value="<?= $u_id; ?>" />
+
 
                             <div style="padding: 2% 4%;display: grid;grid-template-columns: auto auto;">
                                 <div style="display:inline-block;">
                                     <strong style="font-size:12px;">Coupon Code: </strong>
                                 </div>
-                                <div style="display: grid;
-                                            gap: 2%;
-                                            justify-content: end;
-                                            grid-template-columns: auto auto;"> 
-                                    <input type="text" class="couponCode" placeholder="CODE" style="width: 100px;
-                                                                                                    border: 1px solid gray;
-                                                                                                    border-radius: 4px;
-                                                                                                    text-align:center;" />
-                                    <a class="applyCouponCode" style="background-color: green;
-                                                                        color: white;
-                                                                        border-radius: 6px;
-                                                                        font-size: 14px;
-                                                                        height: fit-content;
-                                                                        cursor:pointer;
-                                                                        padding: 2px 12px;" >Apply</a>
-                                </div>
+                                <div>
+                                    <div style="display: grid;
+                                                gap: 2%;
+                                                justify-content: end;
+                                                grid-template-columns: auto auto;"> 
+                                        <input type="text" class="couponCode" placeholder="CODE" style="width: 100px;
+                                                                                                        border: 1px solid gray;
+                                                                                                        border-radius: 4px;
+                                                                                                        text-align:center;" />
+                                        <a class="applyCouponCode" style="background-color: green;
+                                                                            color: white;
+                                                                            border-radius: 6px;
+                                                                            font-size: 14px;
+                                                                            height: fit-content;
+                                                                            cursor:pointer;
+                                                                            padding: 2px 12px;" >Apply</a>
+                                    </div>
+                                    <p class="couponStatus" style="text-align: right;padding: 12px 12px 0 0;"></p>
+                             </div>
                             </div>
 
 
@@ -173,6 +178,15 @@
                                 </div>
 
 							<?php } } else { } ?>
+
+                                <div class="appliedCoupon" style="padding: 2% 4%; display:none;">
+                                    <div style="display:inline-block;">
+                                        <strong style="font-size:12px;">Coupon Applied: </strong>
+                                    </div>
+                                    <div style="display:inline-block;float:right;"> 
+                                        <strong>- ₹ <span class="appliedCouponValue"></span></strong>
+                                    </div>
+                                </div>
 						
 
                                 <div style="padding: 2% 4%;">
@@ -180,7 +194,7 @@
                                         <strong>Total: </strong>
                                     </div>
                                     <div style="display:inline-block;float:right;">
-                                        <strong> ₹ <span class="cartValue"><?= (($total) + ( $deliverycharge)); ?></span></strong>
+                                        <strong> ₹ <span class="cartValue" beforeCoupon="<?= (($total) + ( $deliverycharge)); ?>" afterCoupon=""><?= (($total) + ( $deliverycharge)); ?></span></strong>
                                     </div>
                                 </div>
 
@@ -191,7 +205,7 @@
                                                             border-radius: 6px;
                                                             font-size: 16px;
                                                             height: fit-content;
-                                                            cursor:pointer;" class=" add-btn">CHECKOUT</a>
+                                                            cursor:pointer;" disabled class="checkoutBtn add-btn">CHECKOUT</a>
                                 </div>
 
                             <?php } } else { } ?>
@@ -240,6 +254,54 @@ $(document).on("click",".removeFromCartBtn",function() {
         $(".cartValue").text(cartVal - cardIndiVal);
     });
 });
+
+
+// $(".couponCode").on("input", function(){
+//     var couponCode = $(".couponCode").val();
+//     if(couponCode == '') {
+//         $(".applyCouponCode").attr("disabled",true);
+//     } else {
+//         $(".applyCouponCode").attr("disabled",false);
+//     }
+// });
+
+$(".applyCouponCode").on("click",() => {
+    $.post('couponCheck.php',
+    {   
+        couponCode : $(".couponCode").val()
+    },(result)=> {
+        console.log(result)
+        result = result.trim();
+        if(result == 'NA') {
+            $(".couponStatus").text('Coupon Code Invalid');
+            $(".couponStatus").css("color","red");
+            $(".appliedCoupon").css("display","none");
+            $(".cartValue").text( $(".cartValue").attr('beforeCoupon') );
+            updateCouponValue('0')
+        } else {
+            $(".couponStatus").text('Coupon Applied Successfully');
+            $(".couponStatus").css("color","green");
+            $(".appliedCoupon").css("display","block");
+            $(".appliedCouponValue").text(result);
+            $(".cartValue").text( parseInt($(".cartValue").attr('beforeCoupon')) - parseInt(result) );
+
+            updateCouponValue(result);
+
+        }
+    });
+});
+
+function updateCouponValue(val) {
+
+    $.post('updateCouponValue.php',
+    {
+        couponValue : val,
+        uId : $(".uId").val()
+    },(result)=> {
+
+    });
+
+}
 </script>
 
 </body>

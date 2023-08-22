@@ -23,8 +23,8 @@
           <div class="col-md-8 py-3" style="display: grid;align-items: center;">
             <form action="stores.php" method="post">
             <center>
-              <img src="images/mainpage/logo.png" alt="" width="300px;" />
-              <h5>Groceries Delivered In 1 Hour!</h5>
+              <img src="images/logo.png" alt="" width="300px;" />
+              <h5>Food Delivered In 1 Hour!</h5>
               <!-- <p style="font-size:13px;">Enter your postal code to see your local stores</p> -->
             </center>
 

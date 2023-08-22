@@ -6,7 +6,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
     <link rel="icon" type="image/png" href="assets/img/favicon.png" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Local Cart</title>
+    <title>Veg Hub</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <!-- Bootstrap core CSS     -->
@@ -48,7 +48,7 @@
                                     </div>
                                     <div class="card-content">
                                         
-										<h5 class="text-center">Local Cart</h5>                                 
+										<h5 class="text-center">Veg Hub</h5>                                 
                                         <div class="input-group">
                                             <span class="input-group-addon">
                                                 <i class="material-icons">face</i>

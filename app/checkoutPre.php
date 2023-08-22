@@ -52,10 +52,11 @@ $sql = "UPDATE users SET flat = '$flat', location = '$location', street = '$stre
                 $v_id = $row55["v_id"];
                 $price = $row55["price"];
                 $quantity = $row55["quantity"];
+                $couponValue = $row55["couponValue"];
 
 
-                $sql = "INSERT INTO orders (o_id, u_id, p_id, v_id, price, quantity, date)
-                VALUES ('$o_id', '$u_id', '$p_id', '0', '$price', '$quantity', '$date2')";
+                $sql = "INSERT INTO orders (o_id, u_id, p_id, v_id, price, quantity, couponValue, status, date)
+                VALUES ('$o_id', '$u_id', '$p_id', '$v_id', '$price', '$quantity', '$couponValue', 'Confirmed', '$date2')";
                 if ($conn->query($sql) === TRUE) {
                     
 

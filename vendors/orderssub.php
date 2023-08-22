@@ -22,6 +22,7 @@
 											<th>Location</th>
 											<th>Order Value</th>
 											<th>Ordered at</th>
+											<th>Status</th>
                                         </thead>
                                         <tbody>
                             <?php 
@@ -32,60 +33,81 @@
 								while($rownesu = $resultnesu->fetch_assoc()) {  
 									$v_id = $rownesu["id"]; 
 							?>
-							
-										<?php 
-											if($getter == 'running'){
-												$sql5 = "SELECT * FROM orders WHERE dstatus != 'Delivered' AND v_id = '$v_id'";
-											}else {
-												$sql5 = "SELECT * FROM orders WHERE dstatus = '$getter' AND v_id = '$v_id'";
-											}
-												$result5 = $conn->query($sql5);
-												if ($result5->num_rows > 0) {                               
-												while($row5 = $result5->fetch_assoc()) { 
-													$o_id = $row5["id"];
-													$u_id = $row5["u_id"];
-													$v_id = $row5["v_id"];
-													$p_id = $row5["p_id"];
-													$price = $row5["price"];
-													$date = $row5["date"];
-													$quantity = $row5["quantity"];
+
+
+
+							<?php 
+								$sqls5 = "SELECT DISTINCT(o_id) FROM orders WHERE status = '$getter' AND v_id = '$v_id'";	
+								$results5 = $conn->query($sqls5);
+								if ($results5->num_rows > 0) {                               
+								while($rows5 = $results5->fetch_assoc()) { 
+									$o_id = $rows5["o_id"];
+							?>
+
+								<tr>
+									<td><?= $o_id; ?></td>
+									<td>
+										<?php
+											$totalPrice = 0;
+											$sql8s = "SELECT * FROM orders WHERE o_id = '$o_id' ";
+											$result8s = $conn->query($sql8s);
+											if ($result8s->num_rows > 0) {                               
+											while($row8s = $result8s->fetch_assoc()) { 
+												$p_id = $row8s["p_id"];
+												$u_id = $row8s["u_id"];
+												$orderDate = $row8s["date"];
+												$totalPrice = $totalPrice + ($row8s["price"] * $row8s["quantity"]);
+
+											$sql8 = "SELECT * FROM products WHERE id = '$p_id'";
+											$result8 = $conn->query($sql8);
+											if ($result8->num_rows > 0) {                               
+											while($row8 = $result8->fetch_assoc()) { 
+												$pname = $row8["name"];
 										?>
+											<a href="productdetail?id=<?= $p_id; ?>" class="hrefbox"><?php echo $pname; ?></a>
 										<?php 
-												$sql6 = "SELECT * FROM users WHERE id = '$u_id' ";
-												$result6 = $conn->query($sql6);
-												if ($result6->num_rows > 0) {                               
-												while($row6 = $result6->fetch_assoc()) { 
-													$uname = $row6["fname"];
-													$location = $row6["location"];
+											} } else { } 
+											} } else { }
 										?>
-										<?php 
-												$sql7 = "SELECT * FROM vendors WHERE id = '$v_id' ";
-												$result7 = $conn->query($sql7);
-												if ($result7->num_rows > 0) {                               
-												while($row7 = $result7->fetch_assoc()) { 
-													$business = $row7["business"];
+									</td>
+									<td>
+										<?php
+											$sql6 = "SELECT * FROM users WHERE id = '$u_id' ";
+											$result6 = $conn->query($sql6);
+											if ($result6->num_rows > 0) {                               
+											while($row6 = $result6->fetch_assoc()) { 
+												$uname = $row6["fname"];
+												$flat = $row6["flat"];
+												$area = $row6["area"];
+												$street = $row6["street"];
+												$pincode = $row6["pincode"];
+												$location = $row6["location"];
+
+												echo $uname;
+
+											} } else { } 
 										?>
-										<?php 
-												$sql8 = "SELECT * FROM products WHERE id = '$p_id' ";
-												$result8 = $conn->query($sql8);
-												if ($result8->num_rows > 0) {                               
-												while($row8 = $result8->fetch_assoc()) { 
-													$pname = $row8["name"];
-													
-										?>
-                                            <tr>
-                                                <td><?php echo $row5["id"]; ?></td>
-												<td><a href="productdetail?id=<?php echo $p_id; ?>" class="hrefbox"><?php echo $pname; ?></a></td>
-												<td><?php echo $uname; ?></td>
-												<td><?php echo $location; ?></td>
-                                                <td>Rs. <?php echo $price; ?></td>
-                                                <td><?php echo $date; ?></td>
-                                            </tr>
-										<?php } } else { } ?>
-										<?php } } else { } ?>
-										<?php } } else { } ?>
-										<?php } } else { } ?>
-										<?php } } else { } ?>
+									</td>
+									<td><?= $flat.' '.$street.' '.$area.' '.$location.' '.$pincode; ?></td>
+									<td>Rs. <?php echo $totalPrice; ?></td>
+									<td><?php echo $orderDate; ?></td>
+									<td>
+										<form class="orderStatusChangeForm" action="orderStatusChange.php" method="post">
+										<input type="hidden" name="o_id" value="<?= $o_id; ?>" />
+										<select name="status" class="orderStatusChange">
+											<option value="">Choose Status</option>
+											<option value="Confirmed">Mark as Confirmed</option>
+											<option value="Running">Mark as Running</option>
+											<option value="Delivered">Mark as Delivered</option>
+											<option value="Cancelled">Mark as Cancelled</option>
+										</select>
+										</form>
+									</td>
+								</tr>
+
+							<?php } } else { } ?>
+
+							<?php } } else { } ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -99,3 +121,11 @@
             </div>
         
 <?php include('footer.php'); ?>
+
+
+<script>
+$(document).on("change",".orderStatusChange",function(){
+	console.log(1)
+	$(".orderStatusChangeForm").submit()
+});
+</script>

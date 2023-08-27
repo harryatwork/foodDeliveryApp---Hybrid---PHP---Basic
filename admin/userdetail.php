@@ -38,19 +38,18 @@
                                                             <div class="row m-l-5">
                                                                 <div class="col-sm-6 p-5">
                                                                     <p><strong>First Name</strong></p>
-                                                                    <p><strong>Last Name</strong></p>
+                                                                    <!-- <p><strong>Last Name</strong></p> -->
                                                                     <p><strong>No. Of Purchases</strong></p>
                                                                     <p><strong>Customer Since</strong></p>
                                                                 </div>
                                                                 <div class="col-sm-6 p-10 p-5">
                                                                     <p><?php echo $row5["fname"]; ?></p>
-                                                                    <p><?php echo $row5["lname"]; ?></p>
 																	<?php
-																		$sqlstep1 = "SELECT COUNT(*) AS total FROM orders WHERE status = 'Confirmed' AND u_id = '$u_id'";
+																		$sqlstep1 = "SELECT COUNT(DISTINCT o_id) AS total FROM orders WHERE status = 'Delivered' AND u_id = '$u_id'";
 																		$rowNumstep1 = mysqli_query($conn, $sqlstep1);
 																		$countstep1 = mysqli_fetch_assoc($rowNumstep1);								
 																	?>
-                                                                    <p><a  class="hrefbox"><?php echo  $countstep1["total"]; ?></a></p>
+                                                                    <p><a class="hrefbox"><?php echo  $countstep1["total"]; ?></a></p>
                                                                     <p><?php echo $row5["date"]; ?></p>
                                                                 </div>
                                                             </div>

@@ -392,30 +392,54 @@
                                       id="slide1"
                                       style="border-radius: 0 0 6px 6px;"
                                   >
-                                      <img class="banners__li__img" 
-                                           src="../images/banners/3.png" 
+								  	<?php 
+                                        $sqlBanner1 = "SELECT * FROM banners WHERE id = '1'";
+                                        $resultBanner1 = $conn->query($sqlBanner1);
+                                        if ($resultBanner1->num_rows > 0) {                               
+                                        while($rowBanner1 = $resultBanner1->fetch_assoc()) { 
+                                            $banner1 = $rowBanner1["banner"];
+									?>  
+								  	<img class="banners__li__img" 
+                                           src="../images/banners/<?= $banner1; ?>" 
                                            alt=""
                                            style="border-radius: 0 0 6px 6px;" />
+									<?php } } else { } ?>
                                     <div class="banners__snapper"></div>
                                   </li>
                                   <li class="banners__li banners__slide" 
                                       id="slide1"
                                       style="border-radius: 0 0 6px 6px;"
                                   >
+								  	<?php 
+                                        $sqlBanner2 = "SELECT * FROM banners WHERE id = '2'";
+                                        $resultBanner2 = $conn->query($sqlBanner2);
+                                        if ($resultBanner2->num_rows > 0) {                               
+                                        while($rowBanner2 = $resultBanner2->fetch_assoc()) { 
+                                            $banner2 = $rowBanner2["banner"];
+									?>  
                                       <img class="banners__li__img" 
-                                           src="../images/banners/2.jpeg" 
+                                           src="../images/banners/<?= $banner2; ?>" 
                                            alt=""
                                            style="border-radius: 0 0 6px 6px;" />
+									<?php } } else { } ?>
                                     <div class="banners__snapper"></div>
                                   </li>
                                   <li class="banners__li banners__slide" 
                                       id="slide1"
                                       style="border-radius: 0 0 6px 6px;"
                                   >
+								  	<?php 
+                                        $sqlBanner3 = "SELECT * FROM banners WHERE id = '3'";
+                                        $resultBanner3 = $conn->query($sqlBanner1);
+                                        if ($resultBanner3->num_rows > 0) {                               
+                                        while($rowBanner3 = $resultBanner3->fetch_assoc()) { 
+                                            $banner3 = $rowBanner3["banner"];
+									?>  
                                       <img class="banners__li__img" 
-                                           src="../images/banners/1d.jpeg" 
+                                           src="../images/banners/<?= $banner3; ?>" 
                                            alt=""
                                            style="border-radius: 0 0 6px 6px;" />
+									<?php } } else { } ?>
                                     <div class="banners__snapper"></div>
                                   </li>
                                   

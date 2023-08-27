@@ -26,6 +26,7 @@
                                         </thead>
                                         <tbody>
 										<?php 
+                                            $slNo = 1;
 												$sql4 = "SELECT * FROM users WHERE area = '$city' ";
 												$result4 = $conn->query($sql4);
 												if ($result4->num_rows > 0) {                               
@@ -36,10 +37,10 @@
 													$date = $row4["date"];
 										?>
                                             <tr>
-                                                <td>1</td>
+                                                <td><?= $slNo; ?></td>
 												<td><a href="userdetail?id=<?php echo $id; ?>" class="hrefbox"><?php echo $fname; ?></a></td>
 												<?php
-													$sqlstep1 = "SELECT COUNT(*) AS total FROM orders WHERE u_id = '$id'";
+													$sqlstep1 = "SELECT COUNT(DISTINCT o_id) AS total FROM orders WHERE u_id = '$id' AND status = 'Delivered'";
 													$rowNumstep1 = mysqli_query($conn, $sqlstep1);
 													$countstep1 = mysqli_fetch_assoc($rowNumstep1);								
 												?>
@@ -47,7 +48,7 @@
 												<td><?php echo $city; ?></td>
                                                 <td><?php echo $date; ?></td>
                                             </tr>
-										<?php } } else { } ?>	
+										<?php $slNo++; } } else { } ?>	
                                          
                                         </tbody>
                                     </table>

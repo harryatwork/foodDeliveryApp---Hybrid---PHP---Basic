@@ -44,7 +44,7 @@
                                                 <td><?php echo $row5["id"]; ?> </td>
 												<td><a href="productdetail?id=<?php echo $row5["id"]; ?> " class="hrefbox"><?php echo $row5["name"]; ?> </a></td>
 												<?php
-													$sqlstep1 = "SELECT COUNT(*) AS total FROM orders WHERE p_id = '$id'";
+													$sqlstep1 = "SELECT COUNT(DISTINCT o_id) AS total FROM orders WHERE p_id = '$id' AND status = 'Delivered'";
 													$rowNumstep1 = mysqli_query($conn, $sqlstep1);
 													$countstep1 = mysqli_fetch_assoc($rowNumstep1);								
 												?>

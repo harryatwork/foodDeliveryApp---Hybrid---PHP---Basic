@@ -187,7 +187,7 @@
                                 </div>
                                 <div class="card-content">
                                     <h6 class="category text-gray"><?php echo $row5["business"]; ?></h6>
-                                    <h4 class="card-title"><?php echo $row5["name"]; ?></h4>
+                                    <h4 class="card-title"><?php echo $row5["aperson"]; ?></h4>
 									
                                     <p class="description">
                                         

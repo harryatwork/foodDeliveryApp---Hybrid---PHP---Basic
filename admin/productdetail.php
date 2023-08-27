@@ -62,7 +62,7 @@
                                                                     <p><?php echo $row5["cat"]; ?></p>
 																	<p>Rs.<?php echo $row5["price"]; ?></p>
 																	<?php
-																		$sqlstep1 = "SELECT COUNT(*) AS total FROM orders WHERE status = 'Confirmed' AND p_id = '$p_id'";
+																		$sqlstep1 = "SELECT COUNT(DISTINCT o_id) AS total FROM orders WHERE status = 'Delivered' AND p_id = '$p_id'";
 																		$rowNumstep1 = mysqli_query($conn, $sqlstep1);
 																		$countstep1 = mysqli_fetch_assoc($rowNumstep1);								
 																	?>
@@ -181,7 +181,7 @@
                             <div class="card card-profile">
                                 <div class="card-">
                                     <a href="#pablo">
-                                        <img class="img" src="../images/products/example.png" style="height:500px;" />
+                                        <img class="img" src="../images/products/<?php echo $row5["image"]; ?>" style="height:500px;" />
                                     </a>
                                 </div>
                                 <div class="card-content">

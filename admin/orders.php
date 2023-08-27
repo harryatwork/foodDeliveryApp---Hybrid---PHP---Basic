@@ -15,7 +15,7 @@
                                 <div class="card-content">
                                     <p class="category"><strong>Pending Orders</strong></p>
 									<?php
-										$sqlstep1 = "SELECT COUNT(*) AS total FROM orders WHERE dstatus = 'Pending'";
+										$sqlstep1 = "SELECT COUNT(DISTINCT o_id) AS total FROM orders WHERE status = 'Confirmed'";
 										$rowNumstep1 = mysqli_query($conn, $sqlstep1);
 										$countstep1 = mysqli_fetch_assoc($rowNumstep1);								
 									?>
@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="card-footer">
                                     <div class="stats">
-									<i class="material-icons text-info">info</i> <a href="orderssub?id=Pending">View Details</a>
+									<i class="material-icons text-info">info</i> <a href="orderssub?id=Confirmed">View Details</a>
                                     </div>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
                                 <div class="card-content">
                                     <p class="category"><strong>Running Orders</strong></p>
 									<?php
-										$sqlstep2 = "SELECT COUNT(*) AS total FROM orders WHERE dstatus != 'Delivered'";
+										$sqlstep2 = "SELECT COUNT(DISTINCT o_id) AS total FROM orders WHERE status = 'Running'";
 										$rowNumstep2 = mysqli_query($conn, $sqlstep2);
 										$countstep2 = mysqli_fetch_assoc($rowNumstep2);								
 									?>
@@ -62,7 +62,7 @@
                                 <div class="card-content">
                                     <p class="category"><strong>Completed Orders</strong></p>
 									<?php
-										$sqlstep3 = "SELECT COUNT(*) AS total FROM orders WHERE dstatus = 'Delivered'";
+										$sqlstep3 = "SELECT COUNT(DISTINCT o_id) AS total FROM orders WHERE status = 'Delivered'";
 										$rowNumstep3 = mysqli_query($conn, $sqlstep3);
 										$countstep3 = mysqli_fetch_assoc($rowNumstep3);								
 									?>
@@ -85,7 +85,7 @@
                                 <div class="card-content">
                                     <p class="category"><strong>Cancelled Orders</strong></p>
 									<?php
-										$sqlstep4 = "SELECT COUNT(*) AS total FROM orders WHERE status = 'Cancelled'";
+										$sqlstep4 = "SELECT COUNT(DISTINCT o_id) AS total FROM orders WHERE status = 'Cancelled'";
 										$rowNumstep4 = mysqli_query($conn, $sqlstep4);
 										$countstep4 = mysqli_fetch_assoc($rowNumstep4);								
 									?>

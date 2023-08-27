@@ -50,12 +50,12 @@
                                 <div class="card-">
                                     <a href="#pablo">
 									<?php 
-																	$sql5 = "SELECT * FROM banners WHERE id = '1'";
-																	$result5 = $conn->query($sql5);
-																	if ($result5->num_rows > 0) {                               
-																	while($row5 = $result5->fetch_assoc()) { 
-																		$banner = $row5["banner"];
-															?>
+                                        $sql5 = "SELECT * FROM banners WHERE id = '1'";
+                                        $result5 = $conn->query($sql5);
+                                        if ($result5->num_rows > 0) {                               
+                                        while($row5 = $result5->fetch_assoc()) { 
+                                            $banner = $row5["banner"];
+									?>
                                         <img class="img" src="../images/banners/<?php echo $banner; ?>" style="height:170px;" />
 									<?php } } else { } ?>
                                     </a>

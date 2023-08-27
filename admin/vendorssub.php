@@ -25,12 +25,10 @@
                                             <th>Vendor Name</th>
                                             <th>No. Of Products</th>
 											<th>No. Of Orders</th>
-											<th>Location</th>
 										<!--<th>Total Revenue</th>-->
 											<th>Registered at</th>
                                         </thead>
                                         <tbody>
-										<?php if($getter == 'all'){ ?>
 											<?php 
 												$sql5 = "SELECT * FROM vendors WHERE status = 'Active'";
 												$result5 = $conn->query($sql5);
@@ -52,49 +50,16 @@
 												?>
                                                 <td><a  class="hrefbox"><?php echo  $countstep1["total"]; ?></a></td>
 												<?php
-													$sqlstep2 = "SELECT COUNT(*) AS total FROM orders WHERE v_id = '$v_id'";
+													$sqlstep2 = "SELECT COUNT(DISTINCT o_id) AS total FROM orders WHERE v_id = '$v_id' AND status = 'Delivered'";
 													$rowNumstep2 = mysqli_query($conn, $sqlstep2);
 													$countstep2 = mysqli_fetch_assoc($rowNumstep2);								
 												?>
 												<td><a  class="hrefbox"><?php echo  $countstep2["total"]; ?></a></td>
-												<td><?php echo $city; ?></td>
                                             <!--<td>$30,566</td>-->
                                                 <td><?php echo $date; ?></td>
                                             </tr>
 											<?php } } else { } ?>
-										<?php } else { ?>
-											<?php 
-												$sql5 = "SELECT * FROM vendors WHERE city = '$getter'";
-												$result5 = $conn->query($sql5);
-												if ($result5->num_rows > 0) {                               
-												while($row5 = $result5->fetch_assoc()) { 
-													$v_id = $row5["id"];
-													$business = $row5["business"];
-													$city = $row5["city"];
-													$date = $row5["date"];
-											?>										
-                                            <tr>
-                                                <td><?php echo $v_id; ?></td>
-												<td><a href="vendordetail?id=<?php echo $v_id; ?>" class="hrefbox"><?php echo $business; ?></a></td>
-												<td>Vendor Name</td>
-												<?php
-													$sqlstep1 = "SELECT COUNT(*) AS total FROM products WHERE v_id = '$v_id'";
-													$rowNumstep1 = mysqli_query($conn, $sqlstep1);
-													$countstep1 = mysqli_fetch_assoc($rowNumstep1);								
-												?>
-                                                <td><a  class="hrefbox"><?php echo  $countstep1["total"]; ?></a></td>
-												<?php
-													$sqlstep2 = "SELECT COUNT(*) AS total FROM orders WHERE v_id = '$v_id'";
-													$rowNumstep2 = mysqli_query($conn, $sqlstep2);
-													$countstep2 = mysqli_fetch_assoc($rowNumstep2);								
-												?>
-												<td><a  class="hrefbox"><?php echo  $countstep2["total"]; ?></a></td>
-												<td><?php echo $city; ?></td>
-                                            <!--<td>$30,566</td>-->
-                                                <td><?php echo $date; ?></td>
-                                            </tr>
-											<?php } } else { } ?>
-										<?php } ?>
+										
 											
                                         </tbody>
                                     </table>
